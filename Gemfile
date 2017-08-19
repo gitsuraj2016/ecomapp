@@ -30,7 +30,9 @@ gem 'autoprefixer-rails'
 gem "font-awesome-rails"
 # Use Unicorn as the app server
 # gem 'unicorn'
-
+group :production do
+  gem 'rails_12factor'
+end
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

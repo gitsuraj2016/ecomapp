@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-  resources :products
-  # resources :products
-  resources :categories
+  
   get 'home/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -22,7 +20,10 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
-
+  resources :line_items
+  resources :carts
+  resources :products
+  resources :categories
   # Example resource route with options:
   #   resources :products do
   #     member do

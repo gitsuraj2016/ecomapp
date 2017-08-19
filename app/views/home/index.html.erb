@@ -27,77 +27,19 @@
          <div class="row">							
             <div class="col-md-12 text-center padding-adj2">
              <div class="owl-carousel owl-theme carousel3 icons1">
-                <div class="item">
+             <% @categories.each do |category| %>
+               <div class="item">
                     <a href="/home/product_list">
 						<div class="img-back">
-                        <img src="/assets/img500.jpg">
-						</div>
-                        <p>Category Name</p>
+						<%= image_tag(category.image_url) %>
+ 						</div>
+                        <p><%= category.name %></p>
                     </a>                                    
                 </div>
-				<div class="item">
-                    <a href="#">
-						<div class="img-back">
-                        <img src="/assets/img500.jpg">
-						</div>
-                        <p>Category Name</p>
-                    </a>
-                    
-                </div>
-				<div class="item">
-                    <a href="#">
-						<div class="img-back">
-                        <img src="/assets/img500.jpg">
-						</div>
-                        <p>Category Name</p>
-                    </a>
-                    
-                </div>
-				<div class="item">
-                    <a href="#">
-						<div class="img-back">
-                        <img src="/assets/img500.jpg">
-						</div>
-                        <p>Category Name</p>
-                    </a>
-                    
-                </div>
-				<div class="item">
-                    <a href="#">
-						<div class="img-back">
-                        <img src="/assets/img500.jpg">
-						</div>
-                        <p>Category Name</p>
-                    </a>
-                    
-                </div>
-				<div class="item">
-                    <a href="#">
-						<div class="img-back">
-                        <img src="/assets/img500.jpg">
-						</div>
-                        <p>Category Name</p>
-                    </a>
-                    
-                </div>
-				<div class="item">
-                    <a href="#">
-						<div class="img-back">
-                        <img src="/assets/img500.jpg">
-						</div>
-                        <p>Category Name</p>
-                    </a>
-                    
-                </div>
-				<div class="item">
-                    <a href="#">
-						<div class="img-back">
-                        <img src="/assets/img500.jpg">
-						</div>
-                        <p>Category Name</p>
-                    </a>
-                    
-                </div>
+                 
+              <% end %>
+                
+				
                </div>                      
             </div>
          </div>
@@ -110,74 +52,22 @@
         <div class="row">
             <div class=" text-center heading">
                 <h3>
-                    Category Name
+                    <%= @categories.first.name %>
                 </h3>
             </div>
             <div class="owl-carousel owl-theme owl-1 carousel1">
+              <% @cat_products.each do |pro| %>
                 <div class="item">
 					<a href="#">
 						<div class="img-back1">
-							 <img class="img-responsive" src="/assets/img500.jpg">   
+						  <%= image_tag(pro.image_url) %>
+							 <!-- <img class="img-responsive" src="/assets/img500.jpg">    -->
 						</div>
-						<h4>Product Name</h4>
+						<h4><%= pro.name %></h4>
 					</a>                                                                   
                 </div>
-				<div class="item">
-					<a href="#">
-						<div class="img-back1">
-							 <img class="img-responsive" src="/assets/img500.jpg">   
-						</div>
-						<h4>Product Name</h4>
-					</a>                                                                   
-                </div>
-				<div class="item">
-					<a href="#">
-						<div class="img-back1">
-							 <img class="img-responsive" src="/assets/img500.jpg">   
-						</div>
-						<h4>Product Name</h4>
-					</a>                                                                   
-                </div>
-				<div class="item">
-					<a href="#">
-						<div class="img-back1">
-							 <img class="img-responsive" src="/assets/img500.jpg">   
-						</div>
-						<h4>Product Name</h4>
-					</a>                                                                   
-                </div>
-				<div class="item">
-					<a href="#">
-						<div class="img-back1">
-							 <img class="img-responsive" src="/assets/img500.jpg">   
-						</div>
-						<h4>Product Name</h4>
-					</a>                                                                   
-                </div>
-				<div class="item">
-					<a href="#">
-						<div class="img-back1">
-							 <img class="img-responsive" src="/assets/img500.jpg">   
-						</div>
-						<h4>Product Name</h4>
-					</a>                                                                   
-                </div>
-				<div class="item">
-					<a href="#">
-						<div class="img-back1">
-							 <img class="img-responsive" src="/assets/img500.jpg">   
-						</div>
-						<h4>Product Name</h4>
-					</a>                                                                   
-                </div>
-				<div class="item">
-					<a href="#">
-						<div class="img-back1">
-							 <img class="img-responsive" src="/assets/img500.jpg">   
-						</div>
-						<h4>Product Name</h4>
-					</a>                                                                   
-                </div>
+                <% end %>
+				
 			</div>
         </div>
     </div>

@@ -1,9 +1,19 @@
 class HomeController < ApplicationController
   def index
   	  @abc = 1
+      @categories = Category.order("id asc").all
+      @products = Product.all
+      @cat_products = @categories.first.products
+      # @cat_products.each do | xx |
+      #   puts xx.name
+      # end
+      # puts "#{@cat_products.inspect}"
   end
 
   def product_list
+      @categories = Category.order("id asc").all
+      @products = Product.all
+      @cat_products = @categories.first.products
   	
   end
 

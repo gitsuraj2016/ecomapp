@@ -23,7 +23,7 @@
                                         </li>
                                         <li class="shopping-cart dropdown">
                                             <a data-toggle="dropdown">
-												<i class="fa fa-shopping-bag" aria-hidden="true"><span>2</span></i> 
+												<i class="fa fa-shopping-bag" aria-hidden="true"><span><%= @item_count%></span></i> 
 											</a>
 											<div class="dropdown-menu basket-adjust">
 												<ul>
@@ -68,7 +68,8 @@
                                         <li><a data-toggle="modal" data-target="#signin"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign-Up</a></li>
                                         <li><a href="/home/my_order"><i class="fa fa-list-alt" aria-hidden="true"></i>My Orders</a></li>
 										<li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i>My Wishlist</a></li>
-                                        <li><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i>My Cart</a></li>
+                                        <li><a href="/carts/<%=@cart.id%>"><i class="fa fa-shopping-cart" aria-hidden="true"></i>My Cart</a></li>
+                                        
                                         <li><a href="#"><i class="fa fa-globe" aria-hidden="true"></i>My Address</a></li>
                                         
                                     </ul>

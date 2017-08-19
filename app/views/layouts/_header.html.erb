@@ -1,0 +1,91 @@
+ <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<header>
+     <div class="container">
+                    <div class="brand">
+                        <div class="row">                           
+                            <div class="col-md-4 col-sm-4 col-xs-4">
+                                <div class="logo">
+                                <%= link_to root_path, class: :logo do %>
+                                <img src="/assets/logo.png">
+                               <% end %>
+                                </div>
+                            </div>
+                            <div class="col-sm-8 col-xs-12 right-align">
+                                <div class="mycart">
+                                    <ul class="cart">
+                                        <li>
+                                           	<div class="form-group">
+                                                <div class="icon-addon addon-lg">
+                                                    <input type="text" placeholder="Search" class="form-control" id="Search">
+                                                    <label for="text" class="glyphicon fa fa-search" rel="tooltip" title="Search"></label>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="shopping-cart dropdown">
+                                            <a data-toggle="dropdown">
+												<i class="fa fa-shopping-bag" aria-hidden="true"><span>2</span></i> 
+											</a>
+											<div class="dropdown-menu basket-adjust">
+												<ul>
+													<li>
+														<img src="/assets/img500.jpg">
+													</li>
+													<li>
+														<a href="#" class="remove_list">Remove &times;</a>
+													</li>
+												</ul>
+												<ul>
+													<li>
+														<img src="/assets/img500.jpg">
+													</li>
+													<li>
+														<a href="#" class="remove_list">Remove &times;</a>
+													</li>
+												</ul>
+												<a href="#" class="btn btn-default-style1"> Proceed To Checkout</a>
+											</div>
+											                                           
+                                        </li>
+                                    </ul>
+                                   
+                                </div>
+                                <div class="side-nav">
+                                    <span onclick="openNav()">&#9776;</span>
+                                </div>
+                                <div id="mySidenav" class="sidenav">
+                                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                                    <div class="detail1">
+                                        <h3>
+                                            <i class="fa fa-mobile" aria-hidden="true"></i>1234567890
+                                        </h3>
+                                    </div>
+                                    
+                                    <div class="detail">
+                                        <p>My Information</p>
+                                    </div>
+                                    <ul class="menu1">
+                                        <li><a data-toggle="modal" data-target="#login"><i class="fa fa-user-o" aria-hidden="true"></i>Log-In</a></li>
+                                        <li><a data-toggle="modal" data-target="#signin"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign-Up</a></li>
+                                        <li><a href="/home/my_order"><i class="fa fa-list-alt" aria-hidden="true"></i>My Orders</a></li>
+										<li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i>My Wishlist</a></li>
+                                        <li><a href="#"><i class="fa fa-shopping-cart" aria-hidden="true"></i>My Cart</a></li>
+                                        <li><a href="#"><i class="fa fa-globe" aria-hidden="true"></i>My Address</a></li>
+                                        
+                                    </ul>
+                                    <div class="detail">
+                                        <p>Others</p>
+                                    </div>
+                                    <ul class="menu1">
+                                        <li><a href="#"><i class="fa fa-envelope-o" aria-hidden="true"></i>Contact Us</a></li>
+                                        <li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i>Rate Us</a></li>
+                                        <li><a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i>Share</a></li>
+                                        <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i>About Us</a></li>
+                                        <li><a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a></li>                                       
+                                    </ul>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   </div>
+                </header>

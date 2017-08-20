@@ -368,14 +368,14 @@
 				<label class="label-control">
 					Email ID
 				</label>								
-                <input type="password" class="form-control" placeholder="Enter Email Id">
+                <input type="email" id="userl_email" class="form-control" placeholder="Enter Email Id">
 				<label class="label-control">
 					Password
 				</label>
-                <input type="text" class="form-control" placeholder="Enter Password">
+                <input type="password" id="userl_pass" class="form-control" placeholder="Enter Password">
 				
 				<br />
-				<button type="submit" class="btn btn-default-style1">Login In</button>
+				<button type="button" onclick="sign_in()" class="btn btn-default-style1">Login In</button>
             </form>
             <p>Lost Password? <a class="hide-login" data-toggle="modal" data-target="#lostpass">Click Here</a></p>
 			<p>Don't u have an account?<a class="hide-login" data-toggle="modal" data-target="#signin">Sign Up</a></p> 
@@ -407,17 +407,21 @@
                 <label class="label-control">
 					Name
 				</label>
-                <input type="text" class="form-control" placeholder="Enter Name">
+                <input type="text" id='userr_name' class="form-control" placeholder="Enter Name">
 				<label class="label-control">
 					Email ID
 				</label>								
-                <input type="email" class="form-control" placeholder="Enter Email Id">
+                <input type="email" id='userr_email' class="form-control" placeholder="Enter Email Id">
 				<label class="label-control">
 					Password
 				</label>								
-                <input type="password" class="form-control" placeholder="Enter Password">
+                <input type="password" id='userr_pass' class="form-control" placeholder="Enter Password">
+                <label class="label-control">
+					Confirm Password
+				</label>								
+                <input type="password" id='userr_cpass' class="form-control" placeholder="Enter Confirm Password">
 				
-				<button type="submit" class="btn btn-default-style1">Login In</button>
+				<button type="button" onclick="sign_up()" class="btn btn-default-style1">Register</button>
             </form>
             <p>Have an account?<a class="hide-signin" data-toggle="modal" data-target="#login">Log-in</a></p>                            
         </div>
@@ -461,9 +465,56 @@
 </div>
 <script type="text/javascript">
 	$(window).load(function(){ 
-	    // var abc = '<%=@abc%>';
-	    // ?if(abc == 1){    
+	    var user_id = '<%=@user_id%>';
+	    if(user_id == 0){    
 		   $('#login').modal('show');
-	    // }
-	 }); 
+	    }
+	 });
+
+function sign_in(){
+      var uemail = $('#userl_email').val();
+      var upass = $('#userl_pass').val();
+	$.ajax('/users/login', 
+		{
+		    type: 'POST',
+		    data: {
+					email : uemail,
+					password : upass
+			},
+		    success: function(data) 
+		    {
+		       // alert(data.success);
+		       if(data.success == "success"){
+		         $('#login').modal('hide');	
+		       }else{
+		       	alert(data.success);
+		       }
+			} 
+	});
+} 
+function sign_up(){
+      var uname = $('#userr_name').val();
+      var uemail = $('#userr_email').val();
+      var upass = $('#userr_pass').val();
+      var ucpass = $('#userr_cpass').val();
+	$.ajax('/users/register', 
+		{
+		    type: 'POST',
+		    data: {
+					name : uname,
+					email : uemail,
+					password : upass
+			},
+		    success: function(data) 
+		    {
+		    	alert(data.success);
+		       if(data.success == "success"){
+		         $('#signin').modal('hide');	
+		       }else{
+		       	alert(data.success);
+		       }
+				
+			} 
+	});
+} 
 </script>

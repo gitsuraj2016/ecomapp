@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   
+  get 'users/new'
+
   get 'home/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -11,7 +13,9 @@ Rails.application.routes.draw do
   get  'home/product_detail'
   get  'home/check_out'
   get  'home/my_order'
-
+  post 'users/register', to: 'users#register', as: :registration
+  post 'users/login', to: 'users#login', as: :login
+  get 'users/sign_out', to: 'users#sign_out', as: :sign_out
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

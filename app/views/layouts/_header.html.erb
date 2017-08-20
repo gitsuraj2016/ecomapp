@@ -61,15 +61,24 @@
                                     </div>
                                     
                                     <div class="detail">
-                                        <p>My Information</p>
+                                        <% if @user.present? %>
+                                          <p><%= @user.name%></p>
+                                        <% else %>
+                                           <p>My Info</p>
+                                        <% end %>
+                                        
                                     </div>
                                     <ul class="menu1">
                                         <li><a data-toggle="modal" data-target="#login"><i class="fa fa-user-o" aria-hidden="true"></i>Log-In</a></li>
                                         <li><a data-toggle="modal" data-target="#signin"><i class="fa fa-sign-in" aria-hidden="true"></i>Sign-Up</a></li>
                                         <li><a href="/home/my_order"><i class="fa fa-list-alt" aria-hidden="true"></i>My Orders</a></li>
 										<li><a href="#"><i class="fa fa-heart-o" aria-hidden="true"></i>My Wishlist</a></li>
-                                        <li><a href="/carts/<%=@cart.id%>"><i class="fa fa-shopping-cart" aria-hidden="true"></i>My Cart</a></li>
-                                        
+                                        <% if @cart.present? %>
+                                            <li><a href="/carts/<%=@cart.id%>"><i class="fa fa-shopping-cart" aria-hidden="true"></i>My Cart</a></li>
+                                        <% else %>
+                                            <li><a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i>My Cart</a></li>
+                                        <% end %>
+                                    
                                         <li><a href="#"><i class="fa fa-globe" aria-hidden="true"></i>My Address</a></li>
                                         
                                     </ul>
@@ -81,7 +90,7 @@
                                         <li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i>Rate Us</a></li>
                                         <li><a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i>Share</a></li>
                                         <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i>About Us</a></li>
-                                        <li><a href="#"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a></li>                                       
+                                        <li><a href="users/sign_out"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a></li>                                       
                                     </ul>
                                     
                                 </div>

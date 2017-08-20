@@ -8,8 +8,10 @@ class HomeController < ApplicationController
       #   puts xx.name
       # end
       # puts "#{@cat_products.inspect}"
-      @cart = Cart.find(session[:cart_id])
-      @item_count = @cart.line_items.count
+      if session[:cart_id].present?
+        @cart = Cart.find(session[:cart_id])
+        @item_count = @cart.line_items.count
+     end
   end
 
   def product_list

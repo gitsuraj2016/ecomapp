@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :orders
   get 'users/new'
 
   get 'home/index'
@@ -11,6 +12,7 @@ Rails.application.routes.draw do
   root 'home#index'
   get  'home/product_list'
   get  'home/product_detail'
+  # get  'orders/order_success'
   get  'home/check_out'
   get  'home/my_order'
   post 'users/register', to: 'users#register', as: :registration

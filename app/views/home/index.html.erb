@@ -485,7 +485,8 @@ function sign_in(){
 		    {
 		       // alert(data.success);
 		       if(data.success == "success"){
-		         $('#login').modal('hide');	
+		         $('#login').modal('hide');
+		         location.reload();
 		       }else{
 		       	alert(data.success);
 		       }
@@ -509,7 +510,10 @@ function sign_up(){
 		    {
 		    	// alert(data.success);
 		       if(data.success == "success"){
-		         $('#signin').modal('hide');	
+		         $('#signin').modal('hide');
+		         location.reload();
+		         // $("<%=j flash.now[:notice]  %>").appendTo("#flash-notice")
+
 		       }else{
 		       	// alert(data.success);
 		       }

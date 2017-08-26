@@ -47,6 +47,7 @@ class UsersController < ApplicationController
     user = User.find_by(email: user_email)
     if user && user.authenticate(user_pass)
     	session[:user_id] = user.id
+      flash[:notice] = 'login successfully.'
     	render :json => {:success => 'success', :user_id => user.email}.to_json
     else
       render :json => {:success => 'Invalid User'}.to_json

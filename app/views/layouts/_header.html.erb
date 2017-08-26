@@ -89,7 +89,11 @@
                                             <li><a href=""><i class="fa fa-shopping-cart" aria-hidden="true"></i>My Cart</a></li>
                                         <% end %>
                                     
-                                        <li><a href="users/my_profile"><i class="fa fa-globe" aria-hidden="true"></i>My Profile</a></li>
+
+                                         <% if current_user.present? %>
+                                          <li><a href="users/my_profile"><i class="fa fa-globe" aria-hidden="true"></i>My Profile</a></li>
+                                        <% end %>
+                                        
                                         
                                     </ul>
                                     <div class="detail">
@@ -100,7 +104,11 @@
                                         <li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i>Rate Us</a></li>
                                         <li><a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i>Share</a></li>
                                         <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i>About Us</a></li>
-                                        <li><a href="users/sign_out"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a></li>                                       
+                                        <% if current_user.present? %>
+                                          <li><a href="users/sign_out"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a></li>
+                                           
+                                        <% end %>
+                                                                               
                                     </ul>
                                     
                                 </div>

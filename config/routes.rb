@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
   
+  devise_for :admins
+  # devise_for :admins, path: 'admins'
+  namespace :myadmin do
+  get 'admin/index'
+  end
+
   resources :orders
   get 'users/new'
 

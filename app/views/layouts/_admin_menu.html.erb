@@ -1,0 +1,36 @@
+ <div class="menu-wrap">
+    <nav class="menu">
+        <ul class="clearfix">
+            <li class="current-item">
+                 <a href="#">Home <span class="arrow">&#9660;</span></a>
+                 <ul class="sub-menu">
+                    <li><%= link_to "Category", categories_path %></li>
+                    <li><%#= link_to "Page Menu", :controller => "/myadmin/pagemenus", :action =>"index"  %></li>
+                    <!-- <li><a href="#">Category</a></li> -->
+                    <li><%= link_to "Sub Category", categories_path %></li>
+                    <li><%= link_to "Product", products_path %></li>
+                </ul>
+                 </li>
+            <li>
+                <a href="#">Second Menu<span class="arrow">&#9660;</span></a>
+ 
+                <ul class="sub-menu">
+                    <li><a href="#">Heading Menu</a></li>
+                    <li><a href="#">Heading Menu</a></li>
+                    <li><a href="#">Heading Menu</a></li>
+                    <li><a href="#">Heading &amp; Menu</a></li>
+                </ul>
+            </li>
+            <!-- <li><a href="#">State</a></li>
+            <li><a href="#">Country</a></li>
+            <li><a href="#">State</a></li>
+            <li><a href="#">Country</a></li>
+            <li><a href="#">State</a></li> -->
+            <li>
+              <% if admin_signed_in? %>
+                 <%= link_to('Logout', destroy_admin_session_path, :method => :delete) %>
+              <% end %>
+            </li>
+        </ul>
+    </nav>
+</div>

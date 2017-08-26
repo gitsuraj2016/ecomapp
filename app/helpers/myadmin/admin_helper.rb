@@ -1,0 +1,2 @@
+module Myadmin::AdminHelper
+end

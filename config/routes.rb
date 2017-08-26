@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   post 'users/register', to: 'users#register', as: :registration
   post 'users/login', to: 'users#login', as: :login
   get 'users/sign_out', to: 'users#sign_out', as: :sign_out
+  get 'users/my_profile', to: 'users#my_profile', as: :profile
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

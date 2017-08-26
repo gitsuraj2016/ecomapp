@@ -5,12 +5,16 @@ class CartsController < ApplicationController
   # GET /carts
   # GET /carts.json
   def index
-    @carts = Cart.all
+    # @carts = Cart.all
   end
 
   # GET /carts/1
   # GET /carts/1.json
   def show
+     if @cart.line_items.empty?
+      redirect_to root_url, notice: "Your cart is empty"
+      return
+     end
   end
 
   # GET /carts/new
@@ -67,6 +71,10 @@ class CartsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_cart
+      if session[:cart_id].to_i != params[:id].to_i
+        redirect_to root_url, notice: "Attempt to access invalid cart"
+        return
+      end
       @cart = Cart.find(params[:id])
     end
 

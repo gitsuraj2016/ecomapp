@@ -16,6 +16,20 @@ class UsersController < ApplicationController
     user.password_confirmation = user_pass
     user.save
 
+
+   # respond_to do |format|
+   #    if user.save
+   #       session[:user_id] = user.id
+   #      format.html { redirect_to root_url, notice: 'Login Successfully.' }
+   #      format.js
+   #      # format.json { render :show, status: :created, location: @product }
+   #    else
+   #      format.html { redirect_to root_url, notice: 'Login Erro' }
+   #      # format.js
+   #      # format.json { render json: @product.errors, status: :unprocessable_entity }
+   #    end
+   #  end
+
     if user.present?
      session[:user_id] = user.id
      render :json => {:success => 'success', :user_id => user.id}.to_json
@@ -38,6 +52,21 @@ class UsersController < ApplicationController
       render :json => {:success => 'Invalid User'}.to_json
     end
    
+  end
+
+  def my_profile
+       @user_det =  User.where(:id => current_user.id).first
+
+
+    #  respond_to do |format|
+    #   if @product.save
+    #     format.html { redirect_to @product, notice: 'Product was successfully created.' }
+    #     format.json { render :show, status: :created, location: @product }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @product.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   def sign_out

@@ -1,0 +1,182 @@
+
+ <section class="bg-bread">
+	<div class="breadcrum1">
+		<div class="container">
+			<div class="breadcrum">
+			   <ul>
+				<li><a href="#"> Home > </a></li>
+				<li>Profile</li>
+			   </ul>
+		   
+		   </div>
+		</div>
+	</div>
+</section>
+
+<section>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 centered text-center">
+            <h2>My Account</h2>
+             <form class="form-horizontal profile1">
+                <div id="hide-form1">
+                    <div class="form-group">
+                      <label class="control-label col-sm-4">Name</label>
+                      <div class="col-sm-8 profile2">
+                        <p><%= @user_det.name %></p>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label col-sm-4">Email Address</label>
+                      <div class="col-sm-8 profile2">
+                        <p><%= @user_det.email %></p>
+                      </div>
+                    </div>
+                     <div class="form-group">
+                      <label class="control-label col-sm-4">Mobile Number</label>
+                      <div class="col-sm-8 profile2">
+                        <p><%= @user_det.phone %></p>
+                      </div>
+                    </div>
+                     <div class="form-group">
+                      <label class="control-label col-sm-4">Password</label>
+                      <div class="col-sm-8 profile2">
+                        <p>(not set)</p>
+                      </div>
+                    </div>
+                     <button id="form12" class="btn btn-warning ">Edit</button>
+                </div>
+                
+                 <div id="hide-form2" style="display: none;">
+                    <div class="form-group">
+                      <label class="control-label col-sm-4">Name</label>
+                      <div class="col-sm-8 profile2">
+                        <input class="form-control" type="text" placeholder="<%= @user_det.name %>">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label col-sm-4">Email Address</label>
+                      <div class="col-sm-8 profile2">
+                        <input class="form-control" type="email" placeholder="<%= @user_det.email%>">
+                      </div>
+                    </div>
+                     <div class="form-group">
+                      <label class="control-label col-sm-4">Mobile Number</label>
+                      <div class="col-sm-8 profile2">
+                        <input class="form-control" type="text" placeholder="<%= @user_det.phone%>">
+                      </div>
+                    </div>
+                     <div class="form-group">
+                        <label class="control-label col-sm-4">Password</label>
+                        <div class="col-sm-8 profile2">
+                          <input class="form-control" type="text">
+                        </div>
+                    </div>
+                     <div class="form-group">
+                        <label class="control-label col-sm-4">New Password</label>
+                        <div class="col-sm-8 profile2">
+                          <input class="form-control" type="text">
+                        </div>
+                    </div>
+                     <button type="submit" class="btn btn-warning ">UPDATE</button>
+                     <button type="submit" class="btn btn-warning ">CANCEL</button>
+                 </div>
+              </form>
+        </div>
+    </div>
+</div>
+</section>
+
+ <div class="divider1"></div>
+ <section class="section">
+    <div class="container">
+        <div class="row">
+            <div class=" text-center">
+                <h3>
+                    Fresh Arrivals
+                </h3>
+            </div>
+            <div class="owl-carousel owl-theme owl-1 carousel1">
+                <div class="item">
+					<a href="#">
+						<div class="img-back1">
+							 <img class="img-responsive" src="/assets/home/fruit/1.jpg">   
+						</div>
+						<h4>Fruit Name</h4>
+					</a>                                                                   
+                </div>
+				<div class="item">
+					<a href="#">
+						<div class="img-back1">
+							 <img class="img-responsive" src="/assets/home/fruit/2.jpg">   
+						</div>
+						<h4>Fruit Name</h4>
+					</a>                                                                   
+                </div>
+				<div class="item">
+					<a href="#">
+						<div class="img-back1">
+							 <img class="img-responsive" src="/assets/home/fruit/3.jpg">   
+						</div>
+						<h4>Fruit Name</h4>
+					</a>                                                                   
+                </div>
+				<div class="item">
+					<a href="#">
+						<div class="img-back1">
+							 <img class="img-responsive" src="/assets/home/fruit/4.jpg">   
+						</div>
+						<h4>Fruit Name</h4>
+					</a>                                                                   
+                </div>
+				<div class="item">
+					<a href="#">
+						<div class="img-back1">
+							 <img class="img-responsive" src="/assets/home/fruit/5.jpg">   
+						</div>
+						<h4>Fruit Name</h4>
+					</a>                                                                   
+                </div>
+				<div class="item">
+					<a href="#">
+						<div class="img-back1">
+							 <img class="img-responsive" src="/assets/home/fruit/6.jpg">   
+						</div>
+						<h4>Fruit Name</h4>
+					</a>                                                                   
+                </div>
+				<div class="item">
+					<a href="#">
+						<div class="img-back1">
+							 <img class="img-responsive" src="/assets/fruit/7.jpg">   
+						</div>
+						<h4>Fruit Name</h4>
+					</a>                                                                   
+                </div>
+				<div class="item">
+					<a href="#">
+						<div class="img-back1">
+							 <img class="img-responsive" src="/assets/fruit/4.jpg">   
+						</div>
+						<h4>Fruit Name</h4>
+					</a>                                                                   
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+           
+                          
+            
+   <script>
+    $("#form12").click(function(){
+         $("#hide-form2").show();
+        
+            $("#hide-form1").hide();
+              return false; 
+            
+        });
+   
+   </script>
+
+    

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   
+  resources :subcategories
   devise_for :admins
   # devise_for :admins, path: 'admins'
   namespace :myadmin do
@@ -18,6 +19,7 @@ Rails.application.routes.draw do
   root 'home#index'
   get  'home/product_list'
   get  'home/product_detail'
+  get  'home/product_update'
   # get  'orders/order_success'
   get  'home/check_out'
   get  'home/my_order'

@@ -29,12 +29,12 @@
              <div class="owl-carousel owl-theme carousel3 icons1">
              <% @categories.each do |category| %>
                <div class="item">
-                    <a href="/home/product_list">
+                    <%= link_to(:controller => "home", :action => "product_list", :cat_id => category.id ) do %>
 						<div class="img-back">
 						<%= image_tag(category.image_url) %>
  						</div>
                         <p><%= category.name %></p>
-                    </a>                                    
+                    <% end %>                                    
                 </div>
                  
               <% end %>

@@ -69,7 +69,7 @@ class UsersController < ApplicationController
     #   end
     # end
   end
-
+  
   def sign_out
 
     session[:user_id] = nil

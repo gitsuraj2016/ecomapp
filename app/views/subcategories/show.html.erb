@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @subcategory.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @subcategory.description %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= image_tag(@subcategory.image_url, class: 'list_image', width: "30px" ,heigth: "30px") %>
+</p>
+
+<p>
+  <strong>Active:</strong>
+  <%= @subcategory.active %>
+</p>
+
+<p>
+  <strong>Category:</strong>
+  <%= @subcategory.category.name %>
+</p>
+
+<%= link_to 'Edit', edit_subcategory_path(@subcategory) %> |
+<%= link_to 'Back', subcategories_path %>

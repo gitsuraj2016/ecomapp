@@ -25,113 +25,17 @@
                                 </h3>
                         </div>
                         <div class="owl-carousel owl-theme carousel4 icons1">
+                           <% @subcategories.each do |subcat| %>
                             <div class="item">
                                 <a href="#">
                                     <div class="img-back">
                                         <img src="/assets/img500.jpg">
                                     </div>
-                                    <p>Sub Category Name</p>
+                                    <p><%= subcat.name %></p>
                                 </a>
                             </div>
-                            <div class="item">
-                                <a href="#">
-                                    <div class="img-back">
-                                        <img src="/assets/img500.jpg">
-                                    </div>
-                                    <p>Sub Category Name</p>
-                                </a>
-
-                            </div>
-                            <div class="item">
-                                <a href="#">
-                                    <div class="img-back">
-                                        <img src="/assets/img500.jpg">
-                                    </div>
-                                    <p>Sub Category Name</p>
-                                </a>
-
-                            </div>
-                            <div class="item">
-                                <a href="#">
-                                    <div class="img-back">
-                                        <img src="/assets/img500.jpg">
-                                    </div>
-                                    <p>Sub Category Name</p>
-                                </a>
-
-                            </div>
-                            <div class="item">
-                                <a href="#">
-                                    <div class="img-back">
-                                        <img src="/assets/img500.jpg">
-                                    </div>
-                                    <p>Sub Category Name</p>
-                                </a>
-
-                            </div>
-                            <div class="item">
-                                <a href="#">
-                                    <div class="img-back">
-                                        <img src="/assets/img500.jpg">
-                                    </div>
-                                    <p>Sub Category Name</p>
-                                </a>
-
-                            </div>
-                            <div class="item">
-                                <a href="#">
-                                    <div class="img-back">
-                                        <img src="/assets/img500.jpg">
-                                    </div>
-                                    <p>Sub Category Name</p>
-                                </a>
-
-                            </div>
-                            <div class="item">
-                                <a href="#">
-                                    <div class="img-back">
-                                        <img src="/assets/img500.jpg">
-                                    </div>
-                                    <p>Sub Category Name</p>
-                                </a>
-
-                            </div>
-                            <div class="item">
-                                <a href="#">
-                                    <div class="img-back">
-                                        <img src="/assets/img500.jpg">
-                                    </div>
-                                    <p>Sub Category Name</p>
-                                </a>
-
-                            </div>
-                            <div class="item">
-                                <a href="#">
-                                    <div class="img-back">
-                                        <img src="/assets/img500.jpg">
-                                    </div>
-                                    <p>Sub Category Name</p>
-                                </a>
-
-                            </div>
-                            <div class="item">
-                                <a href="#">
-                                    <div class="img-back">
-                                        <img src="/assets/img500.jpg">
-                                    </div>
-                                    <p>Sub Category Name</p>
-                                </a>
-
-                            </div>
-                            <div class="item">
-                                <a href="#">
-                                    <div class="img-back">
-                                        <img src="/assets/img500.jpg">
-                                    </div>
-                                    <p>Sub Category Name</p>
-                                </a>
-
-                            </div>
+                            <% end %>
+                           
                         </div>
                     </div>
                 </div>
@@ -361,7 +265,7 @@
 											</h3>
                             </div>
                             <div class="col-md-12">
-                             <% @cat_products.each do |pro| %>
+                             <% @subcat_products.each do |pro| %>
                                 <div class="col-md-4 col-sm-6">
                                     <div class="product-container2 product-container1 text-center">
                                         <img src="/assets/img550.jpg" alt="" />

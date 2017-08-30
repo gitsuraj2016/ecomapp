@@ -7,10 +7,10 @@ class ApplicationController < ActionController::Base
 
 
   def check_user
-      @user_id = 0
-      if session[:user_id].present?
-          @user_id = session[:user_id]
-          @user = User.find_by(id: @user_id)
+      @user_id = nil
+      if current_user.present?
+          @user = User.find_by(id: current_user.id)
+          @user_id = @user.id
       end
   end
 

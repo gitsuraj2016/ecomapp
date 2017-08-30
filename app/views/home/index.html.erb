@@ -469,56 +469,5 @@
 	    if(user_id == 0){    
 		   $('#login').modal('show');
 	    }
-	 });
-
-function sign_in(){
-      var uemail = $('#userl_email').val();
-      var upass = $('#userl_pass').val();
-	$.ajax('/users/login', 
-		{
-		    type: 'POST',
-		    data: {
-					email : uemail,
-					password : upass
-			},
-		    success: function(data) 
-		    {
-		       // alert(data.success);
-		       if(data.success == "success"){
-		         $('#login').modal('hide');
-		         location.reload();
-		       }else{
-		       	alert(data.success);
-		       }
-			} 
-	});
-} 
-function sign_up(){
-      var uname = $('#userr_name').val();
-      var uemail = $('#userr_email').val();
-      var upass = $('#userr_pass').val();
-      var ucpass = $('#userr_cpass').val();
-	$.ajax('/users/register', 
-		{
-		    type: 'POST',
-		    data: {
-					name : uname,
-					email : uemail,
-					password : upass
-			},
-		    success: function(data) 
-		    {
-		    	// alert(data.success);
-		       if(data.success == "success"){
-		         $('#signin').modal('hide');
-		         location.reload();
-		         // $("<%=j flash.now[:notice]  %>").appendTo("#flash-notice")
-
-		       }else{
-		       	// alert(data.success);
-		       }
-				
-			} 
-	});
-} 
+	 }); 
 </script>

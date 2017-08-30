@@ -11,10 +11,15 @@ class CartsController < ApplicationController
   # GET /carts/1
   # GET /carts/1.json
   def show
+    @cuser = nil
      if @cart.line_items.empty?
       redirect_to root_url, notice: "Your cart is empty"
       return
      end
+    if current_user.present?
+        @cuser = User.find_by(id: current_user.id)
+    end
+     puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>#{@cuser}"
   end
 
   # GET /carts/new

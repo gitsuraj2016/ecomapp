@@ -11,6 +11,12 @@ class OrdersController < ApplicationController
       redirect_to root_url, notice: "No Order Found"
       return
     end
+
+    @order_item = @orders.line_items
+    @order_item.each do |xx|
+      puts ">>>>>>>>>>>>#{xx.product.name}"
+    end
+    # puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>#{order_item.inspect}"
   end
 
   # GET /orders/1

@@ -20,96 +20,49 @@
         <div class="col-md-12 margin-adjust text-center heading">
             <h3>My Orders</h3>
         </div>
+       <% @order_item.each do |orderitem| %>
          <div class="row bor_order">
-<div class="col-md-4 col-sm-4" >
-<div class="media">
-  <h3>Product Description</h3>
-   <a class="thumbnail pull-left" href="#">
-  <img class="media-object" src="/assets/img500.jpg" class="img-responsive">
-</a>
-<div class="media-body">
-  <h4 class="media-heading"><a href="#">Product name</a></h4>
-  <h5 class="media-heading"><a href="#">Brand name with title</a></h5>
-<h5>Total: Rs 1000</h5>
-<h5>Quantity: 1</h5>
+            <div class="col-md-4 col-sm-4" >
+              <div class="media">
+                <h3>Product Description</h3>
+                   <a class="thumbnail pull-left" href="#">
+                     <img class="media-object" src="/assets/img500.jpg" class="img-responsive">
+                   </a>
+                  <div class="media-body">
+                     <h4 class="media-heading"><a href="#"><%= orderitem.product.name %></a></h4>
+                     <h5 class="media-heading"><a href="#">Brand name with title</a></h5>
+                     <h5>Total: <%= orderitem.total_price %></h5>
+                     <h5>Quantity: <%= orderitem.quantity %></h5>
+                  </div>
+              </div>                        
+            </div>
 
-</div>
-</div>
-                        
-</div>
-<div class="col-md-4 col-sm-4">
-<div class="billing">
-  <h3>Billing Address</h3>
-  <p>Name Of The Customer</p>
-  <p>Phone No-9876543211</p>
-  <p>Email Id: newcustomer@mymailid.com</p>
-  <p>#23, 11th cross, 3rd Main, Kemapaura, Hebbal </p>
-  <p>Bangalore-560024, Karnataka</p>
-  
-  
-</div>
-</div>
+            <div class="col-md-4 col-sm-4">
+              <div class="billing">
+                <h3>Billing Address</h3>
+                <p>Name Of The Customer</p>
+                <p>Phone No-9876543211</p>
+                <p>Email Id: newcustomer@mymailid.com</p>
+                <p>#23, 11th cross, 3rd Main, Kemapaura, Hebbal </p>
+                <p>Bangalore-560024, Karnataka</p> 
+              </div>
+            </div>
 
-<div class="col-md-4 col-sm-4">
-<div class="status_can">
-  <h3>Status Details</h3>
-  <p>Thank you chosing us. We could like to serve you better</p>
-  <p><strong>Your Order will be deliver by 8th August, 2017</strong></p>
-  <div class="text-center">
-    <a href="#" data-toggle="modal" data-target="#cancel_order" class="btn btn-warning btn-warning1">Cancel Order</a>
+              <div class="col-md-4 col-sm-4">
+                <div class="status_can">
+                  <h3>Status Details</h3>
+                  <p>Thank you chosing us. We could like to serve you better</p>
+                  <p><strong>Your Order will be deliver by 8th August, 2017</strong></p>
+                  <div class="text-center">
+                    <a href="#" data-toggle="modal" data-target="#cancel_order" class="btn btn-warning btn-warning1">Cancel Order</a>
+                  </div>
+                </div>
+              </div>               
+         </div>
+     <% end %>               
+   </div>
   </div>
-  
-</div>
-</div>
-                        
-                    
-</div>
-<div class="row bor_order">
-<div class="col-md-4 col-sm-4" >
-<div class="media">
-  <h3>Product Description</h3>
-  <a class="thumbnail pull-left" href="#">
-    <img class="media-object" src="/assets/img500.jpg" class="img-responsive">
-  </a>
-<div class="media-body">
-    <h4 class="media-heading"><a href="#">Product name</a></h4>
-    <h5 class="media-heading"><a href="#">Brand name with title</a></h5>
-<h5>Total: Rs 1000</h5>
-<h5>Quantity: 1</h5>
 
- </div>
-</div>
-                        
-</div>
-<div class="col-md-4 col-sm-4">
-<div class="billing">
-  <h3>Billing Address</h3>
-  <p>Name Of The Customer</p>
-  <p>Phone No-9876543211</p>
-  <p>Email Id: newcustomer@mymailid.com</p>
-  <p>#23, 11th cross, 3rd Main, Kemapaura, Hebbal </p>
-  <p>Bangalore-560024, Karnataka</p>
-  
-  
-</div>
-</div>
-
-<div class="col-md-4 col-sm-4">
-<div class="status_can">
-  <h3>Status Details</h3>
-  <p><strong>Your Order will be DELIVERED on 8th August, 2017</strong></p>
-  <p>Thank you chosing us. We could like to serve you better</p>                  
-  <div class="text-center">
-    <a href="#" data-toggle="modal" data-target="#cancel_order" class="btn btn-warning btn-warning1">Continue Shopping</a>
-  </div>
-  
-</div>
-</div>
-                        
-                    
-</div>
-    </div>
-</div>
 </section>
 <div class="divider1"></div>
 

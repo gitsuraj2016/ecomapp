@@ -105,7 +105,11 @@
                                         <li><a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i>Share</a></li>
                                         <li><a href="#"><i class="fa fa-user" aria-hidden="true"></i>About Us</a></li>
                                         <% if current_user.present? %>
-                                          <li><a href="users/sign_out"><i class="fa fa-sign-out" aria-hidden="true"></i>Logout</a></li>
+                                        <li><%= link_to(sign_out_path) do %>
+                                                <i class="fa fa-sign-out" aria-hidden="true"></i>Logout
+                                            <% end %>
+                                        </li>
+                                         
                                            
                                         <% end %>
                                                                                

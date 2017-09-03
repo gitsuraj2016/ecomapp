@@ -18,8 +18,8 @@ class CartsController < ApplicationController
      end
     if current_user.present?
         @cuser = User.find_by(id: current_user.id)
+        @myadd = Address.where(:user_id=>current_user.id).first
     end
-     puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>#{@cuser}"
   end
 
   # GET /carts/new

@@ -86,32 +86,32 @@
 								</div>
 								<div class="col-md-4">
 									 <div class="product-details12">
-                                        <h4>Order Summary</h4>
-                                        
-                                        <div class="border-style1">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <div class="pull-left">
-                                                        <p> Order Total</p>                                                                        
-                                                    </div>
-                                                    <div class="pull-right">
-                                                        <p> Rs.<%= @cart.total_price %></p>
-                                                    </div>
-                                                </div>
-                                            </div>                                            
-                                        </div>
-                                          <div class="border-style1">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <div class="pull-left">
-                                                    <p><strong>Grand Total </strong> </p>
-                                                    </div>
-                                                    <div class="pull-right">
-                                                        <p><strong>Rs.<%= @cart.total_price %></strong> </p>                                                                                
-                                                    </div>
-                                                </div>
-                                            </div>                                            
-                                        </div>
+                      <h4>Order Summary</h4>
+                      
+                      <div class="border-style1">
+                          <div class="row">
+                              <div class="col-md-12">
+                                  <div class="pull-left">
+                                      <p> Order Total</p>                                                                        
+                                  </div>
+                                  <div class="pull-right">
+                                      <p> Rs.<%= @cart.total_price %></p>
+                                  </div>
+                              </div>
+                          </div>                                            
+                      </div>
+                        <div class="border-style1">
+                          <div class="row">
+                              <div class="col-md-12">
+                                  <div class="pull-left">
+                                  <p><strong>Grand Total </strong> </p>
+                                  </div>
+                                  <div class="pull-right">
+                                      <p><strong>Rs.<%= @cart.total_price %></strong> </p>                                                                                
+                                  </div>
+                              </div>
+                          </div>                                            
+                      </div>
 										   <div class=" bottom-adjust">
 												<button type="button" class="btn btn-default">
 															<span class="fa fa-shopping-cart"></span> Continue Shopping
@@ -120,306 +120,307 @@
 															Checkout <span class="fa fa-play"></span>
 												</button>
 											</div>                                                        
-                                    </div>
+                     </div>
 								</div>
 							</div>													
 						</div>                                                
+          </div>
+<div class="tab-pane" id="tab_default_2">
+<div class="container">
+  <div class="row">
+        <div class="col-md-4">
+            <div class="address-form1 bottom-adjust">
+                
+                 <form class="form-horizontal ">
+                    <div class="address-form">
+                        <h4>Shipping Address</h4>
+                    <div class="form-group">
+                      <label  class="control-label col-sm-4" for="email">Email*</label>
+                      <div class="col-sm-8">
+                        <input type="email" class="form-control form-control1" id="semail" placeholder="Enter email" value="<%= @myadd.semail if @myadd.present?%> " required>
+                      </div>
                     </div>
-                    <div class="tab-pane" id="tab_default_2">
-                        <div class="container">
-							 <div class="row">
-                                <div class="col-md-4">
-                                    <div class="address-form1 bottom-adjust">
-                                        
-                                         <form class="form-horizontal ">
-                                            <div class="address-form">
-                                                <h4>Shipping Address</h4>
-                                            <div class="form-group">
-                                              <label class="control-label col-sm-4" for="email">Email*</label>
-                                              <div class="col-sm-8">
-                                                <input type="email" class="form-control form-control1" id="email" placeholder="Enter email" required>
-                                              </div>
-                                            </div>
-                                            <div class="form-group">
-                                              <label class="control-label col-sm-4" for="pwd">Pincode*</label>
-                                              <div class="col-sm-8">
-                                                <input type="text" class="form-control form-control1" placeholder="Enter Pincode" required>
-                                              </div>
-                                            </div>
-                                            <div class="form-group">
-                                             <label class="control-label col-sm-4" for="email">Address*</label>
-                                              <div class="col-sm-8">
-                                                <textarea type="text" class="form-control" id="email" placeholder="Enter Address" required></textarea>
-                                              </div>
-                                            </div>
-                                            <div class="form-group">
-                                              <label class="control-label col-sm-4">First Name*</label>
-                                              <div class="col-sm-8">
-                                                <input type="text" class="form-control form-control1" placeholder="Enter First Name" required />
-                                              </div>
-                                            </div>
-                                             <div class="form-group" >
-                                              <label class="control-label col-sm-4">Last Name*</label>
-                                              <div class="col-sm-8">
-                                                <input type="text" class="form-control form-control1" placeholder="Enter Last Name" required />
-                                              </div>
-                                            </div>
-                                              <div class="form-group" >
-                                              <label class="control-label col-sm-4">Mobile*</label>
-                                              <div class="col-sm-8">
-                                                <input type="text" class="form-control form-control1" placeholder="Enter Mobile" required />
-                                              </div>
-                                            </div>
-											   <div class="form-group" ></div>
-                                            
-                                            </div>
-                                           
-                                          </form>
-                                    </div>
-                                </div>
-                                 <div class="col-md-5">
-                                    <div class="address-form1 bottom-adjust">                                        
-                                         <form class="form-horizontal">
-                                            <div class="address-form">
-                                                 <div class="form-group form-style-extra">
-                                                    <label class="control-label col-sm-4">Billing Address</label>
-                                                    <div class="col-sm-8">
-                                                      <label class=" form-control2">
-                                                        <input type="checkbox" id="chkPassport" value="" checked>Use Shipping Address </label>
-                                                    </div>
-                                                </div>
-                                                 <div id="shipping-address" style="display: none" >
-                                                  <div class="form-group">
-                                                    <label class="control-label col-sm-4">First Name*</label>
-                                                    <div class="col-sm-8">
-                                                      <input type="text" class="form-control form-control1" placeholder="Enter First Name" required />
-                                                    </div>
-                                                  </div>
-                                                   <div class="form-group" >
-                                                    <label class="control-label col-sm-4">Last Name*</label>
-                                                    <div class="col-sm-8">
-                                                      <input type="text" class="form-control form-control1" placeholder="Enter Last Name" required />
-                                                    </div>
-                                                  </div>
-                                                     <div class="form-group">
-                                                   <label class="control-label col-sm-4" for="email">Address*</label>
-                                                    <div class="col-sm-8">
-                                                      <textarea type="text" class="form-control" id="email" placeholder="Enter Address" required></textarea>
-                                                      <div class="col-md-7 form-style12">
-                                                         <input type="text" class="form-control form-control1" placeholder="Enter City" required />
-                                                   
-                                                      </div>
-                                                      <div class="col-md-5 form-style12">
-                                                         <input type="text" class="form-control form-control1" placeholder="Pincode" required />
-                                                   
-                                                      </div>
-                                                      <div class="col-md-12 form-style12">
-                                                        <select class="form-control form-control1">
-                                                            <option>Select Your State</option>
-                                                            <option>1</option>
-                                                            <option>2</option>
-                                                            <option>3</option>
-                                                            <option>4</option>
-                                                            <option>5</option>
-                                                        </select>
-                                                      </div>
-                                                       <div class="col-md-12 form-style12">
-                                                        <select class="form-control form-control1">
-                                                            <option>India</option>
-                                                            <option>Nepal</option>
-                                                            <option>Sri Lanka</option>
-                                                            
-                                                        </select>
-                                                      </div>
-                                                    </div>
-                                                  </div>
-                                                    <div class="form-group" >
-                                                        <label class="control-label col-sm-4">Mobile*</label>
-                                                        <div class="col-sm-8">
-                                                          <input type="text" class="form-control form-control1" placeholder="Enter Mobile" required />
-                                                        </div>
-                                                      </div>
-                                                 </div>
-                                            </div>
-                                         </form>
-                                    </div>
-                                </div>
-                                  <div class="col-md-3">
-                                    <div class="product-details12 bottom-adjust">
-                                        <h4>Order Summary</h4>
-                                        <% @cart.line_items.each do |item| %>
-                                        <div class="img-section border-style1">
-                                            <img src="/assets/img500.jpg" width="80px">
-                                            <div class="detail-section">
-                                                <h5><%= item.product.name %></h5>
-                                                <p><%= item.product.description %></p>
-                                            </div>
-                                        </div>
-                                        <% end %>
-										
-                                        <div class="border-style1">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <div class="pull-left">
-                                                        <p> Order Total</p>
-                                                    </div>
-                                                    <div class="pull-right">
-                                                        <p> Rs. <%= @cart.total_price %></p>
-                                                    </div>
-                                                </div>
-                                            </div>                                            
-                                        </div>
-                                          <div class="border-style1">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <div class="pull-left">
-                                                    <p><strong>Grand Total </strong> </p>
-                                                    </div>
-                                                    <div class="pull-right">
-                                                        <p><strong>Rs.<%= @cart.total_price %></strong> </p>
-                                                        
-                                                    </div>
-                                                </div>
-                                            </div>                                            
-                                        </div>
-                                        <div class="border-style1">
-                                            <div class="row">
-                                                <div class="col-md-12">
-                                                    <div class="pull-left">
-                                                         <p> EMI (details) Starting:</p>
-                                                
-                                                    </div>
-                                                    <div class="pull-right">
-                                                         <p> Rs. 1000</p>
-                                                    </div>
-                                                </div>
-                                            </div>                                            
-                                        </div>
-                                         
-                                        
-                                    </div>
-                                </div>
-                                </div>
-							 <div class="row">
-								<div class="col-md-12">
-									 <div class="form-group "> 
-                                              <div class=" col-sm-10">
-                                                <button type="submit" class="btn btn-warning btn-warning1">SAVE AND CONTINUE</button>
-                                              </div>
-                                    </div>
-								</div>
-							 </div>
-						</div>
+                    <div class="form-group">
+                      <label class="control-label col-sm-4" for="pwd">Pincode*</label>
+                      <div class="col-sm-8">
+                        <input type="text" id="spincode" class="form-control form-control1" placeholder="Enter Pincode" value="<%=@myadd.spincode if @myadd.present? %>" required>
+                      </div>
                     </div>
-                    <div class="tab-pane" id="tab_default_3">
-                       <div class="container">
-							 <div class="row">
-                                <div class="col-md-8">
-                                    <div class="address-form1">
-                                            
-                                             <form class="form-horizontal">
-                                                <div class="address-form">
-                                                    <h4>Shipping Address</h4>
-                                                <div class="form-group">
-                                                 <div class="radio">
-                                                    <label class="bold"><input type="radio" name="optradio">Card On Delivery </label>
-                                                  </div>
-                                                </div>
-                                                <div class="form-group">
-                                                 <div class="radio">
-                                                    <label><input type="radio" name="optradio" disabled>Cash On Delivery<br />Available only for order value less than ₹25000/-.
-                                                    </label>
-                                                    
-                                                  </div>
-                                                </div>
-                                                 <div class="form-group">
-                                                 <div class="radio">
-                                                    <label class="bold"><input type="radio" name="optradio">Credit Card / Debit Card / Net Banking  </label>
-                                                  </div>
-                                                </div>
-                                                 <div class="form-group">
-                                                 <div class="radio">
-                                                    <label class="bold"><input type="radio" name="optradio">EMIs on Credit Card Details >> <br />Full upfront payment is required via a Credit Card. EMI approval is at the sole discretion of the card issuing bank. Note: EMIs on Amex cards are temporarily disabled </label>
-                                                  </div>
-                                                </div>
-                                                 <div class="form-group">
-                                                 <div class="radio">
-                                                    <label><input type="radio" name="optradio" disabled> Interest Free EMI (Bajaj Finserv) Check Eligibility >> <br >Applicable only for order values of Rs. 50,000 or higher. Note: this payment method is not available for Goa and Trivandrum.  </label>
-                                                  </div>
-                                                </div>
-                                                </div>
-                                                
-                                                <div class="form-group">
-                                                    <div class="col-sm-10">
-                                                        <p>Email-Id: asdf@asf.com Mobile: 9987654321</p>
-                                                    </div>
-                                                  <div class=" col-sm-10">
-                                                    <!-- <button type="submit" class="btn btn-warning btn-warning1">Place Order</button> -->
-                                                   <!--  <%= button_to "Continue", new_order_path,class: "btn btn-warning btn-warning1" %> -->
-                                                   <% if @cuser != nil %>
-                                                   <%#= link_to 'Proceed To Payment', new_order_path %>
-                                                   <%= link_to(new_order_path, class: "btn btn-warning btn-warning1") do %>
-                                                     Proceed To Payment
-                                                     <% end %>
-                                                   <% else %>
-                                                   <a data-toggle="modal" data-target="#login"><i class="btn btn-warning btn-warning1">Proceed To Payment</i></a>
-                                                    <!-- <button type="submit" onclick="popuplogin();" class="btn btn-warning btn-warning1">Place Order</button> -->
-                                                   <% end %>
-                                                  </div>
-                                                </div>
-                                            
-                                              </form>
-                                        </div>
-                                </div>
-                                <div class="col-md-4">
-                                      <div class="product-details12">
-                                    <h4>Order Summary</h4>
-                                    <% @cart.line_items.each do |item| %>
-                                        <div class="img-section border-style1">
-                                            <img src="/assets/img500.jpg" width="80px">
-                                            <div class="detail-section">
-                                                <h5><%= item.product.name %></h5>
-                                                <p><%= item.product.description %></p>
-                                            </div>
-                                        </div>
-                                    <% end %>
-                                    <div class="border-style1">
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="pull-left">
-                                                    <p> Order Total</p>
-                                            
-                                                </div>
-                                                <div class="pull-right">
-                                                    <p> Rs.<%= @cart.total_price %></p>
-                                                </div>
-                                            </div>
-                                        </div>                                            
-                                    </div>
-                                      <div class="">
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="pull-left">
-                                                <p><strong>Grand Total </strong> </p>
-                                                </div>
-                                                <div class="pull-right">
-                                                    <p><strong>Rs.<%= @cart.total_price %></strong> </p>
-                                                    
-                                                </div>
-                                            </div>
-                                        </div>                                            
-                                    </div>
-                                   
-                                     
-                                    
-                                </div>
-                                </div>
-                           </div>
-						</div>
-                    </div>                               
-                </div>                                
+                    <div class="form-group">
+                     <label class="control-label col-sm-4" for="email">Address*</label>
+                      <div class="col-sm-8">
+                        <textarea type="text" class="form-control" id="saddess" placeholder="Enter Address" required><%=@myadd.saddress if @myadd.present? %></textarea>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label class="control-label col-sm-4">First Name*</label>
+                      <div class="col-sm-8">
+                        <input type="text" class="form-control form-control1" placeholder="Enter First Name" value="<%=@myadd.sfirst_name if @myadd.present? %>" id="sfname" required />
+                      </div>
+                    </div>
+                     <div class="form-group" >
+                      <label class="control-label col-sm-4">Last Name*</label>
+                      <div class="col-sm-8">
+                        <input type="text" id="slname" class="form-control form-control1" value="<%=@myadd.slast_name if @myadd.present? %>" placeholder="Enter Last Name" required />
+                      </div>
+                    </div>
+                      <div class="form-group" >
+                      <label class="control-label col-sm-4">Mobile*</label>
+                      <div class="col-sm-8">
+                        <input type="text" id="sphone" class="form-control form-control1" value="<%=@myadd.sphone if @myadd.present? %>" placeholder="Enter Mobile" required />
+                      </div>
+                    </div>
+ <div class="form-group" ></div>
+                    
+                    </div>
+                   
+                  </form>
+            </div>
+        </div>
+ <div class="col-md-5">
+    <div class="address-form1 bottom-adjust">                                        
+         <form class="form-horizontal">
+            <div class="address-form">
+                 <div class="form-group form-style-extra">
+                    <label class="control-label col-sm-4">Billing Address</label>
+                    <div class="col-sm-8">
+                      <label class=" form-control2">
+                        <input type="checkbox" id="add_same" value="" checked>Use Shipping Address </label>
+                    </div>
+                </div>
+                 <div id="shipping-address" style="display: none" >
+                  <div class="form-group">
+                    <label class="control-label col-sm-4">First Name*</label>
+                    <div class="col-sm-8">
+                      <input type="text" id="bfname" class="form-control form-control1" value="<%=@myadd.bfirst_name if @myadd.present? %>" placeholder="Enter First Name" required />
+                    </div>
+                  </div>
+                   <div class="form-group" >
+                    <label class="control-label col-sm-4">Last Name*</label>
+                    <div class="col-sm-8">
+                      <input type="text" id="blname" class="form-control form-control1" value="<%=@myadd.blast_name if @myadd.present? %>" placeholder="Enter Last Name" required />
+                    </div>
+                  </div>
+                     <div class="form-group">
+                   <label class="control-label col-sm-4" for="email">Address*</label>
+                    <div class="col-sm-8">
+                      <textarea type="text" class="form-control" id="baddress" placeholder="Enter Address" required><%=@myadd.baddress if @myadd.present? %></textarea>
+                      <div class="col-md-7 form-style12">
+                         <input type="text" id="bcity" class="form-control form-control1" value="<%=@myadd.bcity if @myadd.present? %>" placeholder="Enter City" required />
+                   
+                      </div>
+                      <div class="col-md-5 form-style12">
+                         <input type="text" id="bpincode" class="form-control form-control1" value="<%=@myadd.bpincode if @myadd.present? %>" placeholder="Pincode" required />
+                   
+                      </div>
+                      <div class="col-md-12 form-style12">
+                        <select id="bstate" class="form-control form-control1">
+                            <option>Select Your State</option>
+                            <option>Karnataka</option>
+                            <option>Bihar</option>
+                            <option>UP</option>
+                            <option>Delhi</option>
+                            <option>Mp</option>
+                        </select>
+                      </div>
+                       <div class="col-md-12 form-style12">
+                        <select id="bcountry" class="form-control form-control1">
+                            <option>India</option>
+                            <option>Nepal</option>
+                            <option>Sri Lanka</option>
+                            
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                    <div class="form-group" >
+                        <label class="control-label col-sm-4">Mobile*</label>
+                        <div class="col-sm-8">
+                          <input type="text" id="bphone" class="form-control form-control1" value="<%=@myadd.bphone if @myadd.present? %>" placeholder="Enter Mobile" required />
+                        </div>
+                      </div>
+                 </div>
+            </div>
+         </form>
+    </div>
+</div>
+    <div class="col-md-3">
+      <div class="product-details12 bottom-adjust">
+          <h4>Order Summary</h4>
+          <% @cart.line_items.each do |item| %>
+          <div class="img-section border-style1">
+              <img src="/assets/img500.jpg" width="80px">
+              <div class="detail-section">
+                  <h5><%= item.product.name %></h5>
+                  <p><%= item.product.description %></p>
+              </div>
+          </div>
+          <% end %>
+
+          <div class="border-style1">
+              <div class="row">
+                  <div class="col-md-12">
+                      <div class="pull-left">
+                          <p> Order Total</p>
+                      </div>
+                      <div class="pull-right">
+                          <p> Rs. <%= @cart.total_price %></p>
+                      </div>
+                  </div>
+              </div>                                            
+          </div>
+            <div class="border-style1">
+              <div class="row">
+                  <div class="col-md-12">
+                      <div class="pull-left">
+                      <p><strong>Grand Total </strong> </p>
+                      </div>
+                      <div class="pull-right">
+                          <p><strong>Rs.<%= @cart.total_price %></strong> </p>
+                          
+                      </div>
+                  </div>
+              </div>                                            
+          </div>
+          <div class="border-style1">
+              <div class="row">
+                  <div class="col-md-12">
+                      <div class="pull-left">
+                           <p> EMI (details) Starting:</p>
+                  
+                      </div>
+                      <div class="pull-right">
+                           <p> Rs. 1000</p>
+                      </div>
+                  </div>
+              </div>                                            
+          </div>
+           
+          
+      </div>
+  </div>
+  </div>
+ <div class="row">
+	<div class="col-md-12">
+		 <div class="form-group "> 
+      <div class=" col-sm-10">
+        <input type="button" class="btn btn-warning btn-warning1" value="SAVE AND CONTINUE" onclick="save_address();">
+       
+      </div>
+  </div>
+	</div>
+ </div>
+</div>
+</div>
+<div class="tab-pane" id="tab_default_3">
+<div class="container">
+<div class="row">
+<div class="col-md-8">
+<div class="address-form1">
+
+<form class="form-horizontal">
+  <div class="address-form">
+      <h4>Shipping Address</h4>
+  <div class="form-group">
+   <div class="radio">
+      <label class="bold"><input type="radio" name="optradio">Card On Delivery </label>
+    </div>
+  </div>
+  <div class="form-group">
+   <div class="radio">
+      <label><input type="radio" name="optradio" disabled>Cash On Delivery<br />Available only for order value less than ₹25000/-.
+      </label>
+      
+    </div>
+  </div>
+   <div class="form-group">
+   <div class="radio">
+      <label class="bold"><input type="radio" name="optradio">Credit Card / Debit Card / Net Banking  </label>
+    </div>
+  </div>
+   <div class="form-group">
+   <div class="radio">
+      <label class="bold"><input type="radio" name="optradio">EMIs on Credit Card Details >> <br />Full upfront payment is required via a Credit Card. EMI approval is at the sole discretion of the card issuing bank. Note: EMIs on Amex cards are temporarily disabled </label>
+    </div>
+  </div>
+   <div class="form-group">
+   <div class="radio">
+      <label><input type="radio" name="optradio" disabled> Interest Free EMI (Bajaj Finserv) Check Eligibility >> <br >Applicable only for order values of Rs. 50,000 or higher. Note: this payment method is not available for Goa and Trivandrum.  </label>
+    </div>
+  </div>
+  </div>
+  
+  <div class="form-group">
+      <div class="col-sm-10">
+          <p>Email-Id: asdf@asf.com Mobile: 9987654321</p>
+      </div>
+    <div class=" col-sm-10">
+      <!-- <button type="submit" class="btn btn-warning btn-warning1">Place Order</button> -->
+     <!--  <%= button_to "Continue", new_order_path,class: "btn btn-warning btn-warning1" %> -->
+     <% if @cuser != nil %>
+     <%#= link_to 'Proceed To Payment', new_order_path %>
+     <%= link_to(payments_mypayment_path, class: "btn btn-warning btn-warning1") do %>
+       Proceed To Payment
+       <% end %>
+     <% else %>
+     <a data-toggle="modal" data-target="#login"><i class="btn btn-warning btn-warning1">Proceed To Payment</i></a>
+      <!-- <button type="submit" onclick="popuplogin();" class="btn btn-warning btn-warning1">Place Order</button> -->
+     <% end %>
+    </div>
+  </div>
+
+</form>
+</div>
+</div>
+<div class="col-md-4">
+<div class="product-details12">
+<h4>Order Summary</h4>
+<% @cart.line_items.each do |item| %>
+<div class="img-section border-style1">
+    <img src="/assets/img500.jpg" width="80px">
+    <div class="detail-section">
+        <h5><%= item.product.name %></h5>
+        <p><%= item.product.description %></p>
+    </div>
+</div>
+<% end %>
+<div class="border-style1">
+<div class="row">
+    <div class="col-md-12">
+        <div class="pull-left">
+            <p> Order Total</p>
+    
+        </div>
+        <div class="pull-right">
+            <p> Rs.<%= @cart.total_price %></p>
         </div>
     </div>
+</div>                                            
+</div>
+<div class="">
+<div class="row">
+    <div class="col-md-12">
+        <div class="pull-left">
+        <p><strong>Grand Total </strong> </p>
+        </div>
+        <div class="pull-right">
+            <p><strong>Rs.<%= @cart.total_price %></strong> </p>
+            
+        </div>
+    </div>
+</div>                                            
+</div>
+
+
+
+</div>
+</div>
+</div>
+</div>
+</div>                               
+</div>                                
+</div>
+</div>
 </div>
 </div>
 </section>
@@ -619,16 +620,54 @@
 </div>  
 	
 <script>
-  $('.add').click(function () {
-		$(this).prev().val(+$(this).prev().val() + 1);
-	});
-	$('.sub').click(function () {
-		if ($(this).next().val() > 0) $(this).next().val(+$(this).next().val() - 1);
-	});
-
-  function popuplogin(){
-    // alert('Hi.....');
-     $('#login').modal('show');
+  function save_address(){
+      var sfname = $('#sfname').val();
+      var slname = $('#slname').val();
+      var semail = $('#semail').val();
+      var sphone = $('#sphone').val();
+      var saddess = $('#saddess').val();
+      var spincode = $('#spincode').val();
+      var bfname = $('#bfname').val();
+      var blname = $('#blname').val();
+      // var upass = $('#bemail').val();
+      var baddress = $('#baddress').val();
+      var bcity = $('#bcity').val();
+      var bstate = $('#bstate').val();
+      var bcity = $('#bcity').val();
+      var bcountry = $('#bcountry').val();
+      var bphone = $('#bphone').val();
+      
+      var add_same = 1;
+      if(document.getElementById('add_same').checked) {
+      } else {
+        add_same = 0
+      }
+      
+  $.ajax('/users/save_address', 
+    {
+        type: 'POST',
+        data: {
+          sfname : sfname,
+          slname : slname,
+          semail : semail,
+          sphone : sphone,
+          saddess : saddess,
+          spincode : spincode,
+          bfname : bfname,
+          blname : blname,
+          baddress : baddress,
+          bcity : bcity,
+          bstate : bstate,
+          bcountry : bcountry,
+          bphone : bphone,
+          add_same : add_same
+      },
+        success: function(data) 
+        {
+          
+        
+      } 
+    });
   }
 </script>
 

@@ -11,10 +11,37 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170826191541) do
+ActiveRecord::Schema.define(version: 20170903062850) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "addresses", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "sfirst_name"
+    t.string   "bfirst_name"
+    t.string   "slast_name"
+    t.string   "blast_name"
+    t.string   "saddress"
+    t.string   "baddress"
+    t.string   "scity"
+    t.string   "bcity"
+    t.string   "sstate"
+    t.string   "bstate"
+    t.string   "spincode"
+    t.string   "bpincode"
+    t.string   "sphone"
+    t.string   "bphone"
+    t.string   "semail"
+    t.string   "bemail"
+    t.string   "scountry"
+    t.string   "bcountry"
+    t.boolean  "add_same"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "addresses", ["user_id"], name: "index_addresses_on_user_id", using: :btree
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -78,6 +105,19 @@ ActiveRecord::Schema.define(version: 20170826191541) do
 
   add_index "orders", ["user_id"], name: "index_orders_on_user_id", using: :btree
 
+  create_table "payments", force: :cascade do |t|
+    t.decimal  "amount",       precision: 8, scale: 2
+    t.datetime "paid_at"
+    t.string   "status"
+    t.string   "payment_type"
+    t.string   "card_num"
+    t.string   "ip_address"
+    t.string   "payer_id"
+    t.integer  "customer_id"
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
+  end
+
   create_table "products", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
@@ -114,6 +154,7 @@ ActiveRecord::Schema.define(version: 20170826191541) do
     t.datetime "updated_at",      null: false
   end
 
+  add_foreign_key "addresses", "users"
   add_foreign_key "line_items", "carts"
   add_foreign_key "line_items", "orders"
   add_foreign_key "line_items", "products"

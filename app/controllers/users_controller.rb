@@ -76,4 +76,69 @@ class UsersController < ApplicationController
     redirect_to root_url, notice: 'Log out Successfully'
    
   end
+
+  def save_address
+
+        sfname = params[:sfname]
+        slname = params[:slname]
+        semail = params[:semail]
+        sphone = params[:sphone]
+        saddress = params[:saddess]
+        spincode = params[:spincode]
+        add_same =  params[:add_same]
+        bfname = params[:bfname]
+        blname = params[:blname]
+        bemail = params[:bemail]
+        baddress = params[:baddress]
+        bcity = params[:bcity]
+        bstate = params[:bstate]
+        bpincode = params[:bpincode]
+        bcountry = params[:bcountry]
+        bphone = params[:bphone]
+
+        myadd = Address.where(:user_id=>current_user.id).first
+       if myadd.present?
+        myadd = myadd
+       else
+        myadd = Address.new
+       end
+        myadd.user_id = current_user.id
+        myadd.sfirst_name = sfname
+        myadd.slast_name = slname
+        myadd.saddress = saddress
+        # myadd.scity 
+        # myadd.sstate
+        myadd.spincode = spincode
+        myadd.sphone = sphone
+        myadd.semail = semail
+        # myadd.scountry
+        if add_same.to_i == 1
+          myadd.bfirst_name = sfname
+          myadd.blast_name = slname
+          myadd.baddress = saddress
+          # myadd.bcity
+          # myadd.bstate
+          myadd.bpincode = spincode
+          myadd.bphone = sphone
+          myadd.bemail = semail
+          # myadd.bcountry
+          myadd.add_same = 1
+        else
+          myadd.bfirst_name = bfname
+          myadd.blast_name = blname
+          myadd.baddress = baddress
+          myadd.bcity = bcity
+          myadd.bstate = bstate
+          myadd.bpincode = bpincode
+          myadd.bphone = bphone
+          myadd.bemail = bemail
+          myadd.bcountry = bcountry
+          myadd.add_same = 0
+        end
+        # myadd.add_same
+        myadd.save
+      
+        redirect_to :back, notice: 'Address Save Successfully'
+   
+  end
 end

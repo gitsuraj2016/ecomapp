@@ -1,0 +1,67 @@
+  <div class="col-md-4 mypay">
+   <div class="product-details12">
+    <h4>Payments Confirmation</h4>
+    
+    <div class="border-style1">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="pull-left">
+                    <p> Order Total</p>                                                                        
+                </div>
+                <div class="pull-right">
+                    <p> Rs.<%= @cart.total_price %></p>
+                </div>
+            </div>
+        </div>                                            
+    </div>
+      <div class="border-style1">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="pull-left">
+                <p><strong>Grand Total </strong> </p>
+                </div>
+                <div class="pull-right">
+                    <p><strong>Rs.<%= @cart.total_price %></strong> </p>                                                                                
+                </div>
+            </div>
+        </div>                                            
+    </div>
+   <div class=" bottom-adjust">
+     <% payment_form_for_payu 'yjAxoB55 ', 'sJBuaXoezs',
+      :txnid => @payment_id,
+      :amount => @payment_paid_amount.to_s,
+      :productinfo =>"P info",
+      :firstname => @payment_first_name,
+      :email => @payment_email,
+      :phone =>  @payment_phone,
+      :surl => 'http://' + 'localhost' + ':3000/payu_callback',
+      :furl => 'http://' + "localhost" + ':3000/payu_callback',
+      :service_provider => 'payu_paisa',
+      :html => { :id => 'payment-form' } %>
+   
+  </div>                                                        
+ </div>
+</div>
+<style type="text/css">
+  input[type=submit] {
+    background-image: linear-gradient(to bottom, #0e9f66, #0e9f66);
+    border-radius:3px;
+    display: inline-block;
+    line-height: 22px;
+    padding:7px 12px;
+    margin:0;
+    border: 1px solid #88bcf2; 
+    color: #FFFFFF;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: -1px;
+    text-shadow: 0 1px 1px #70A7E0;
+    cursor:pointer;
+}
+.mypay{
+  margin-bottom: 250px;
+    margin-top: 129px;
+    margin-left: 437px;
+  /*margin-right: 250px;*/
+}
+</style>

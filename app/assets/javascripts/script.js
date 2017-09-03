@@ -181,7 +181,7 @@ $(document).ready(function(){
       
       //billing address
         $(function () {
-                $("#chkPassport").click(function () {
+                $("#add_same").click(function () {
                    if ($(this).is(":checked")) {
                         $("#shipping-address").hide();
                      } else {

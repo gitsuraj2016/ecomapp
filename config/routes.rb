@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   
+  
+
+
   resources :subcategories
   devise_for :admins
   # devise_for :admins, path: 'admins'
@@ -14,7 +17,8 @@ Rails.application.routes.draw do
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
-
+  match '/payu_callback' => 'payments#payu_return', :via => [:get, :post], :as => 'payments_payu_return'
+  get 'payments/mypayment'
   # You can have the root of your site routed with "root"
   root 'home#index'
   get  'home/product_list'
@@ -24,6 +28,7 @@ Rails.application.routes.draw do
   get  'home/check_out'
   get  'home/my_order'
   post 'users/register', to: 'users#register', as: :registration
+  post 'users/save_address', to: 'users#save_address', as: :save_address
   post 'users/login', to: 'users#login', as: :login
   get 'users/sign_out', to: 'users#sign_out', as: :sign_out
   get 'users/my_profile', to: 'users#my_profile', as: :profile

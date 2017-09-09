@@ -18,12 +18,16 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
   match '/payu_callback' => 'payments#payu_return', :via => [:get, :post], :as => 'payments_payu_return'
+  match '/product_search' => 'home#product_search', :via => [:get, :post], :as => 'product_search'
   get 'payments/mypayment'
   # You can have the root of your site routed with "root"
   root 'home#index'
-  get  'home/product_list'
+  get  '/product_list' => 'home#product_list', as: 'product_list'
+  get  '/filter_listing' => 'home#filter_listing', as: 'filter_listing'
+  
   get  'home/product_detail'
   get  'home/product_update'
+  # get  'home/product_listing'
   # get  'orders/order_success'
   get  'home/check_out'
   get  'home/my_order'

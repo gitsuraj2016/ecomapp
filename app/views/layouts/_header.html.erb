@@ -16,8 +16,10 @@
                                         <li>
                                            	<div class="form-group">
                                                 <div class="icon-addon addon-lg">
-                                                    <input type="text" placeholder="Search" class="form-control" id="Search">
+                                                  <form class="" action="/product_search" method="get">
+                                                    <input type="search" name="search" placeholder="Search" class="form-control" value="<%=params[:search] if params[:search].present?%>" id="product_spec_search">
                                                     <label for="text" class="glyphicon fa fa-search" rel="tooltip" title="Search"></label>
+                                                    </form>
                                                 </div>
                                             </div>
                                         </li>
@@ -25,25 +27,24 @@
                                             <a data-toggle="dropdown">
 												<i class="fa fa-shopping-bag" aria-hidden="true"><span><%= @item_count%></span></i> 
 											</a>
+                                            <% if @cart_item.present? %>
 											<div class="dropdown-menu basket-adjust">
+                                              <% @cart_item.each do |item| %>
 												<ul>
 													<li>
-														<img src="/assets/img500.jpg">
+                                                      <%= image_tag(item.product.image_url) %>
+														<!-- <img src="/assets/img500.jpg"> -->
 													</li>
 													<li>
-														<a href="#" class="remove_list">Remove &times;</a>
+                                                    <%= link_to "Remove", decrease_line_item_path(id: item.product.id)%>
+														<!-- <a href="#" class="remove_list">Remove &times;</a> -->
 													</li>
 												</ul>
-												<ul>
-													<li>
-														<img src="/assets/img500.jpg">
-													</li>
-													<li>
-														<a href="#" class="remove_list">Remove &times;</a>
-													</li>
-												</ul>
-												<a href="#" class="btn btn-default-style1"> Proceed To Checkout</a>
+                                             <%end %>
+												
+												<a href="/carts/<%=@cart.id%>" class="btn btn-default-style1"> Proceed To Checkout</a>
 											</div>
+                                            <% end %>
 											                                           
                                         </li>
                                     </ul>

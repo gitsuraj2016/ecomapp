@@ -1,0 +1,70 @@
+ 
+     <div class="panel-heading">
+                  
+        <h4 class="panel-title">
+        <a data-toggle="collapse" href="#collapse4">
+         <i class="indicator fa fa-caret-down" aria-hidden="true"></i> <%=title%></a>
+        </h4>
+    </div>
+    <div id="collapse4" class="panel-collapse collapse in">
+        <ul class="list-group">
+        <%filter_item.each do |item|%>
+            <li class="list-group-item">
+                <div class="checkbox">
+                    <div class="filter-list-checkbox">
+                        <label>
+                            <%= check_box_tag col_name, item.id%> <%= item.name %>
+                         </label>
+                    </div>
+                 </div>
+            </li>
+         <%end%>
+        </ul>
+    </div>
+
+    <script type="text/javascript">
+$(document).ready(function() {
+  var filter_checkbox = {};
+  $('.filter-list-checkbox :checkbox').click(function() {
+    call_filter(filter_checkbox);
+    // alert('click');
+  });
+
+//   var checkedValues = $('.input:checkbox:checked').map(function() {
+//     return this.value;
+// }).get();
+
+  // $("#rangeinput").change(function () {                    
+  //    var newValue = $('#rangeinput').val();
+  //    $("#rangevalue").html("B "+newValue);
+  //    call_filter(filter_checkbox);
+  // });
+
+});
+
+function call_filter(filter_checkbox) {
+  var col_name = new Array("cat_id", "brand_id","sort_id","price_id","color_id");
+
+  col_name.forEach(function(item_id) {
+    filter_checkbox[item_id]=$(".filter-list-checkbox input[name='"+item_id+"']:checked").map(function () { return this.value; }).get().join(', ');
+  });
+
+
+  // filter_checkbox["price"]=$('#rangeinput').val();
+  var search=$('#product_spec_search').val();
+  console.log(JSON.stringify(filter_checkbox));
+  $.ajax({
+    url : '/filter_listing',
+    dataType : 'script',
+    cache : false,
+    type: 'get',
+    data : {
+      "filter_checkbox" : filter_checkbox,
+      "search" : search
+    }
+  });
+}
+</script>
+
+                                 
+    

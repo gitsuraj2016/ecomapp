@@ -1,0 +1,83 @@
+
+   
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.7.0/css/bootstrap-slider.min.css" />
+        <section class="bg-bread">
+            <div class="breadcrum1">
+                <div class="container">
+                    <div class="breadcrum">
+                        <ul>
+                            <li><a href="#"> Home > </a></li>
+                            <li> <a href="#"> Search > </a></li>
+                            <li> <%=@ser_text%> </li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    <!--  -->
+        <div class="divider1"></div>
+        <section>
+            <div class="container">
+
+                <div class="row">
+                           <div class="col-md-4 col-sm-4">
+                            <div class="text-center heading">
+                                    <h3>Filter Your Search</h3>
+                                </div>
+                            <div id="accordion" class="panel behclick-panel">
+                             <div class="panel-body">
+                          <%=render "sidebar_menu", :title=>"category", :filter_item=>@filter_cats, :col_name=>"cat_id"%>
+                          <%=render "sidebar_menu", :title=>"Sort by", :filter_item=>@filter_sort, :col_name=>"sort_id"%>
+                          <%=render "sidebar_menu", :title=>"Price", :filter_item=>@filter_price, :col_name=>"price_id"%>
+                          <%=render "sidebar_menu", :title=>"Brand", :filter_item=>@filter_brand, :col_name=>"brand_id"%>
+                          <%=render "sidebar_menu", :title=>"Color", :filter_item=>@filter_color, :col_name=>"color_id"%>
+                              </div>
+                            </div>
+                          </div>
+                          <%#= render "sidebar_menu" %>
+                    <div class="col-md-8 col-sm-8">
+                        <div class="row">
+                            <div class="text-center heading">
+                                <h3>  Latest Arrivals</h3>
+                            </div>
+                            <div class="col-md-12 search_">
+                             <% if @pro_count == 0 %>
+                             <div>NO Result Found </div>
+                             <% else %>
+                               <%= render "search_result", :products => @subcat_products %>   
+                             <% end %>
+                            </div>
+                        </div>
+                        <div class="row text-center">
+                          <ul class="pagination pagi_style">
+                            <%= will_paginate @subcat_products %>
+                            <!-- <li class="disabled"><a href="#">«</a></li>
+                            <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li><a href="#">»</a></li> -->
+                          </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="divider1"></div>
+        
+
+
+
+
+<!-- <style type="text/css">
+  .pagination {
+  .previous_page { background:#7777ff; color:white }
+  .previous_page.disabled { background: white; color: #777 }
+  .current { background: yellow }
+  .next_page { background: #7777ff; color: white }
+  .next_page.disabled { background: white; color: #777 }
+}
+</style> -->

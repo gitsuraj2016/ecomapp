@@ -18,6 +18,9 @@ class ApplicationController < ActionController::Base
       @item_count = 0
      if session[:cart_id].present?
         @cart = Cart.find(session[:cart_id])
+        if !@cart.line_items.empty?
+           @cart_item = @cart.line_items
+        end
         @item_count = @cart.line_items.count
      end
   	  

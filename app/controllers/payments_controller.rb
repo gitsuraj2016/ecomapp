@@ -35,8 +35,9 @@ class PaymentsController < ApplicationController
   end
 
   def payu_return
+    
     begin
-      notification = PayuIndia::Notification.new(request.query_string, options = {:key => 'yjAxoB55', :salt => 'sJBuaXoezs', :params => params})    
+      notification = PayuIndia::Notification.new(request.query_string, options = {:key => 'rjQUPktU', :salt => 'e5iIg1jwi8', :params => params})    
       payment = Payment.find(notification.invoice)  # invoice is nothing but the payment_id
       if notification.acknowledge
         begin
@@ -59,18 +60,22 @@ class PaymentsController < ApplicationController
             # order.discount_amount = 
             # order.total_amount = 
             # oredr.save
+            puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> successfully"
             flash[:notice] = "Payment Done successfully!!!"
             redirect_to root_url
           else
+            puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> failed"
             payment.status = "failed"
             flash[:notice] = "Payment fail!. Please try again"
             redirect_to root_url    #show.html.erb
          end
         ensure
+          puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> payment save"
           payment.save
         end
       end
     rescue
+      puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> rescue"
       flash[:notice] = "something goes wrong ! please try again after some times!!!"
       redirect_to root_url
     end

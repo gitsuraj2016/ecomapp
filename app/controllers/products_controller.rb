@@ -17,6 +17,8 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
     @subcategories = Subcategory.all.map{|c| [ c.name, c.id ] }
+    @product.product_colors.build
+    @product.product_brands.build
   end
 
   # GET /products/1/edit
@@ -74,6 +76,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :description, :image_url, :price, :curr_status, :subcategory_id)
+      params.require(:product).permit(:name, :description, :image_url, :price, :curr_status, :subcategory_id,:color_ids => [],:brand_ids => [])
     end
 end

@@ -27,7 +27,7 @@
         </div>                                            
     </div>
    <div class=" bottom-adjust">
-     <% payment_form_for_payu 'rjQUPktU ', 'e5iIg1jwi8',
+     <% payment_form_for_payu 'nD88BBBq ', 'sgqO8H1mSg',
       :txnid => @payment_id,
       :amount => @payment_paid_amount.to_s,
       :productinfo =>"P info",
@@ -36,8 +36,8 @@
       :phone =>  @payment_phone,
       # :surl => 'http://' + 'localhost' + ':3000/payu_callback',
       # :furl => 'http://' + "localhost" + ':3000/payu_callback',
-      :surl => 'http://' + 'localhost' + ':3000/payu_callback',
-      :furl => 'http://' + "localhost" + ':3000/payu_callback',
+      :surl => 'http://' + 'devecomapp.herokuapp.com' + '/payu_callback',
+      :furl => 'http://' + "devecomapp.herokuapp.com" + '/payu_callback',
       :service_provider => 'payu_paisa',
       :html => { :id => 'payment-form' } %>
    

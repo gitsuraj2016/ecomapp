@@ -323,7 +323,7 @@
       <h4>Shipping Address</h4>
   <div class="form-group">
    <div class="radio">
-      <label class="bold"><input type="radio" name="optradio">Card On Delivery </label>
+      <label class="bold"><input type="radio" id="cod" name="optradio" checked="true">Card On Delivery </label>
     </div>
   </div>
   <div class="form-group">
@@ -335,7 +335,7 @@
   </div>
    <div class="form-group">
    <div class="radio">
-      <label class="bold"><input type="radio" name="optradio">Credit Card / Debit Card / Net Banking  </label>
+      <label class="bold"><input type="radio" id="cdcard" name="optradio">Credit Card / Debit Card / Net Banking  </label>
     </div>
   </div>
    <div class="form-group">
@@ -358,10 +358,17 @@
       <!-- <button type="submit" class="btn btn-warning btn-warning1">Place Order</button> -->
      <!--  <%= button_to "Continue", new_order_path,class: "btn btn-warning btn-warning1" %> -->
      <% if @cuser != nil %>
+     <div id="cod_div">
      <%#= link_to 'Proceed To Payment', new_order_path %>
+     <%= link_to(cod_confirmation_path, class: "btn btn-success btn-warning1") do %>
+        Order Now
+       <% end %>
+     </div>
+     <div id="cdcard_div">
      <%= link_to(payments_mypayment_path, class: "btn btn-warning btn-warning1") do %>
        Proceed To Payment
        <% end %>
+       </div>
      <% else %>
      <a data-toggle="modal" data-target="#login"><i class="btn btn-warning btn-warning1">Proceed To Payment</i></a>
       <!-- <button type="submit" onclick="popuplogin();" class="btn btn-warning btn-warning1">Place Order</button> -->
@@ -620,6 +627,29 @@
 </div>  
 	
 <script>
+
+$(document).ready(function() {
+   $("#cdcard_div").hide();
+
+  $("#cod").change(function() {
+    if(this.checked) {
+      $("#cdcard_div").hide();
+      $("#cod_div").show();
+      // alert("cod");
+    }
+});
+
+  $("#cdcard").change(function() {
+    if(this.checked) {
+      $("#cod_div").hide();
+      $("#cdcard_div").show();
+      // alert('card');
+    }
+});
+
+});
+
+
   function save_address(){
       var sfname = $('#sfname').val();
       var slname = $('#slname').val();

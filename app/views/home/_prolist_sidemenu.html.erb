@@ -4,6 +4,7 @@
         <h4 class="panel-title">
         <a data-toggle="collapse" href="#collapse4">
          <i class="indicator fa fa-caret-down" aria-hidden="true"></i> <%=title%></a>
+         <input type="hidden" name="sub_cat_id" id="sub_cat_id" value="<%=@subcat_id_hidden%>">
         </h4>
     </div>
     <div id="collapse4" class="panel-collapse collapse in">
@@ -47,14 +48,7 @@
                    </div>
               </li>
            <%end%>
-
         <% end %>
-        
-
-
-
-
-
         </ul>
     </div>
 
@@ -62,7 +56,7 @@
 $(document).ready(function() {
   var filter_checkbox = {};
   $('.filter-list-checkbox :checkbox').click(function() {
-    call_filter(filter_checkbox);
+    call_profilter(filter_checkbox);
     // alert('click');
   });
 
@@ -78,7 +72,7 @@ $(document).ready(function() {
 
 });
 
-function call_filter(filter_checkbox) {
+function call_profilter(filter_checkbox) {
   var col_name = new Array("subcategory_id", "brand_id","sort_id","price_id","color_id");
 
   col_name.forEach(function(item_id) {
@@ -87,16 +81,16 @@ function call_filter(filter_checkbox) {
 
 
   // filter_checkbox["price"]=$('#rangeinput').val();
-  var search=$('#product_spec_search').val();
+  var sub_cat_id = $('#sub_cat_id').val();
   console.log(JSON.stringify(filter_checkbox));
   $.ajax({
-    url : '/filter_listing',
+    url : '/productfilter_listing',
     dataType : 'script',
     cache : false,
     type: 'get',
     data : {
       "filter_checkbox" : filter_checkbox,
-      "search" : search
+      "sub_cat_id" :sub_cat_id
     }
   });
 }

@@ -13,9 +13,9 @@ class OrdersController < ApplicationController
     end
 
     @order_item = @orders.line_items
-    @order_item.each do |xx|
-      puts ">>>>>>>>>>>>#{xx.product.name}"
-    end
+    # @order_item.each do |xx|
+    #   puts ">>>>>>>>>>>>#{xx.product.name}"
+    # end
     # puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>#{order_item.inspect}"
   end
 

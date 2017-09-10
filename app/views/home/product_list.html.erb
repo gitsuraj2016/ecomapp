@@ -47,227 +47,28 @@
                 <div class="row">
 					
                     <div class="col-md-4 col-sm-4">
-						<div class="text-center heading">
-                                <h3>
-												Filter Your Search
-											</h3>
+                            <div class="text-center heading">
+                                    <h3>Filter Your Search</h3>
+                                </div>
+                            <div id="accordion" class="panel behclick-panel">
+                             <div class="panel-body">
+                          <%#=render "prolist_sidemenu", :title=>"category", :filter_item=>@filter_cats, :col_name=>"subcategory_id"%>
+                          <%=render "prolist_sidemenu", :title=>"Sort by", :filter_item=>@filter_sort, :col_name=>"sort_id"%>
+                          <%#=render "sidebar_menu", :title=>"Price", :filter_item=>@filter_price, :col_name=>"price_id"%>
+                          <%=render "prolist_sidemenu", :title=>"Brand", :filter_item=>@filter_brand, :col_name=>"brand_id"%>
+                          <%=render "prolist_sidemenu", :title=>"Color", :filter_item=>@filter_color, :col_name=>"color_id"%>
+                              </div>
                             </div>
-                        <div id="accordion" class="panel behclick-panel">
-                            <!--<div class="panel-heading">
-                                <h3 class="panel-title">Search Filter Car</h3>
-                            </div>-->
-                            <div class="panel-body">
-								<div class="panel-heading">
-									
-                                    <h4 class="panel-title">
-										<a data-toggle="collapse" href="#collapse4"><i class="indicator fa fa-caret-down" aria-hidden="true"></i> Category</a>
-									</h4>
-                                </div>
-                                <div id="collapse4" class="panel-collapse collapse in">
-                                    <ul class="list-group">
-                                        <li class="list-group-item">
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" value=""> Category Name
-                                                </label>
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" value=""> Category Name
-                                                </label>
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" value=""> Category Name
-                                                </label>
-                                            </div>
-                                        </li>
-										<li class="list-group-item">
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" value=""> Category Name
-                                                </label>
-                                            </div>
-                                        </li>
-										<li class="list-group-item">
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" value=""> Category Name
-                                                </label>
-                                            </div>
-                                        </li>
-										
-                                    </ul>
-                                </div>
-								<div class="panel-heading">
-                                    <h4 class="panel-title">
-										<a data-toggle="collapse" href="#collapse5"><i class="indicator fa fa-caret-down" aria-hidden="true"></i> Sort By</a>
-									</h4>
-                                </div>
-                                <div id="collapse5" class="panel-collapse collapse in">
-                                    <ul class="list-group">
-                                        <li class="list-group-item">
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" value=""> Popular Items
-                                                </label>
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" value=""> Relevent
-                                                </label>
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" value=""> Price: Low - High
-                                                </label>
-                                            </div>
-                                        </li>
-										 <li class="list-group-item">
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" value=""> Price: High - Low
-                                                </label>
-                                            </div>
-                                        </li>
-										  <li class="list-group-item">
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" value=""> Latest Item
-                                                </label>
-                                            </div>
-                                        </li>
-										
-										
-                                    </ul>
-                                </div>
-								
-                                <div class="panel-heading ">
-                                    <h4 class="panel-title">
-										<a data-toggle="collapse" href="#collapse0">
-											<i class="indicator fa fa-caret-down" aria-hidden="true"></i> Price
-										</a>
-									</h4>
-                                </div>
-                                <div id="collapse0" class="panel-collapse collapse in">
-                                    <ul class="list-group">
-                                        <li class="list-group-item">
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" value=""> 0 - 1000 Rs
-                                                </label>
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" value=""> 1000 Rs - 2000 Rs
-                                                </label>
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" value=""> 2000 Rs - 6000 Rs
-                                                </label>
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" value=""> More Than 6000 Rs
-                                                </label>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-
-                                <div class="panel-heading ">
-                                    <h4 class="panel-title">
-							<a data-toggle="collapse" href="#collapse1">
-								<i class="indicator fa fa-caret-down" aria-hidden="true"></i> Brand
-							</a>
-						</h4>
-                                </div>
-                                <div id="collapse1" class="panel-collapse collapse in">
-                                    <ul class="list-group">
-                                        <li class="list-group-item">
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" value=""> Brand name
-                                                </label>
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" value=""> Brand name
-                                                </label>
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" value=""> Brand name
-                                                </label>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="panel-heading">
-                                    <h4 class="panel-title">
-							<a data-toggle="collapse" href="#collapse3"><i class="indicator fa fa-caret-down" aria-hidden="true"></i> Color</a>
-						</h4>
-                                </div>
-                                <div id="collapse3" class="panel-collapse collapse in">
-                                    <ul class="list-group">
-                                        <li class="list-group-item">
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" value=""> red
-                                                </label>
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" value=""> blue
-                                                </label>
-                                            </div>
-                                        </li>
-                                        <li class="list-group-item">
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input type="checkbox" value=""> green
-                                                </label>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                                             
-                                
-                            </div>
-                        </div>
-                    </div>
+                      </div>
                     <div class="col-md-8 col-sm-8">
                         <div class="row">
                             <div class="text-center heading">
                                 <h3>
-												Latest Arrivals
-											</h3>
+									Latest Arrivals
+								</h3>
                             </div>
-                            <div class="col-md-12">
-                             <%= render "pro_listing" %>
-                                
-
+                            <div class="col-md-12 prolist_partial">
+                             <%= render "pro_listing", :products => @subcat_products %>
                             </div>
                         </div>
 						<div class="row text-center">

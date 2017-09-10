@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170903062850) do
+ActiveRecord::Schema.define(version: 20170909105428) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -61,6 +61,13 @@ ActiveRecord::Schema.define(version: 20170903062850) do
   add_index "admins", ["email"], name: "index_admins_on_email", unique: true, using: :btree
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
 
+  create_table "brands", force: :cascade do |t|
+    t.string   "name"
+    t.boolean  "enabled",    default: true
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
   create_table "carts", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -73,6 +80,13 @@ ActiveRecord::Schema.define(version: 20170903062850) do
     t.boolean  "active",      default: true
     t.datetime "created_at",                 null: false
     t.datetime "updated_at",                 null: false
+  end
+
+  create_table "colors", force: :cascade do |t|
+    t.string   "name"
+    t.boolean  "enabled",    default: true
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   create_table "line_items", force: :cascade do |t|
@@ -118,6 +132,26 @@ ActiveRecord::Schema.define(version: 20170903062850) do
     t.datetime "updated_at",                           null: false
   end
 
+  create_table "product_brands", force: :cascade do |t|
+    t.integer  "product_id"
+    t.integer  "brand_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "product_brands", ["brand_id"], name: "index_product_brands_on_brand_id", using: :btree
+  add_index "product_brands", ["product_id"], name: "index_product_brands_on_product_id", using: :btree
+
+  create_table "product_colors", force: :cascade do |t|
+    t.integer  "product_id"
+    t.integer  "color_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "product_colors", ["color_id"], name: "index_product_colors_on_color_id", using: :btree
+  add_index "product_colors", ["product_id"], name: "index_product_colors_on_product_id", using: :btree
+
   create_table "products", force: :cascade do |t|
     t.string   "name"
     t.text     "description"
@@ -159,6 +193,10 @@ ActiveRecord::Schema.define(version: 20170903062850) do
   add_foreign_key "line_items", "orders"
   add_foreign_key "line_items", "products"
   add_foreign_key "orders", "users"
+  add_foreign_key "product_brands", "brands"
+  add_foreign_key "product_brands", "products"
+  add_foreign_key "product_colors", "colors"
+  add_foreign_key "product_colors", "products"
   add_foreign_key "products", "categories"
   add_foreign_key "products", "subcategories"
   add_foreign_key "subcategories", "categories"

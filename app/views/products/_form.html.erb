@@ -31,9 +31,19 @@
     <%= f.label :curr_status %><br>
     <%= f.text_field :curr_status %>
   </div>
-  <div class="field">
-    <%= select_tag(:subcategory_id, options_for_select(@subcategories), :prompt => "Select one!") %>
+   <div>
+    <%= f.label :Color %><br>
+    <%= f.collection_select(:color_ids, Color.all, :id, :name, {include_hidden: false}, {multiple: true} ) %><br />
   </div>
+   <div>
+   <%= f.label :Brand %><br>
+    <%= f.collection_select(:brand_ids, Brand.all, :id, :name, {include_hidden: false}, {multiple: true} ) %><br />
+  </div>
+  <div class="field">
+    <%= f.label :Subcategory %><br>
+    <%= select_tag(:subcategory_id, options_for_select(@subcategories), :prompt => "Select one!") %><br>
+  </div>
+  <br>
   <!-- <div class="field">
     <%= f.label :category_id %><br>
     <%= f.text_field :category_id %>

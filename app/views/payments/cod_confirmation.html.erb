@@ -1,0 +1,38 @@
+<div class="col-md-4 mypay">
+   <div class="product-details12">
+    <h4>Order Confirmation</h4>
+    
+    <div class="border-style1">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="pull-left">
+                    <p> Order Total</p>                                                                        
+                </div>
+                <div class="pull-right">
+                    <p> Rs.<%= @cart.total_price %></p>
+                </div>
+            </div>
+        </div>                                            
+    </div>
+      <div class="border-style1">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="pull-left">
+                <p><strong>Grand Total </strong> </p>
+                </div>
+                <div class="pull-right">
+                    <p><strong>Rs.<%= @cart.total_price %></strong> </p>                                                                                
+                </div>
+            </div>
+        </div>                                            
+    </div>
+    <div>
+     <%= link_to(place_oreder_path, class: "btn btn-warning btn-warning1") do %>
+       Proceed
+       <% end %>
+    </div>
+                                                        
+ </div>
+ </div>
+
+   

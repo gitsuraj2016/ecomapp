@@ -12,7 +12,8 @@
 
 <p>
   <strong>Image url:</strong>
-  <%= image_tag(@subcategory.image_url, class: 'list_image', width: "30px" ,heigth: "30px") %>
+  <%= image_tag @subcategory.image_url.medium5x5.url %>
+  <%#= image_tag(@subcategory.image_url, class: 'list_image', width: "30px" ,heigth: "30px") %>
 </p>
 
 <p>

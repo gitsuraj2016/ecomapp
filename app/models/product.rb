@@ -10,6 +10,8 @@ class Product < ActiveRecord::Base
   
   before_destroy :ensure_not_referenced_by_any_line_item
 
+  mount_uploader :image_url, ImageUploader
+
  private
 
  def ensure_not_referenced_by_any_line_item

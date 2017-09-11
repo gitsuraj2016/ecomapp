@@ -50,7 +50,8 @@
 											<div class="checkout_box">
 												<div class="media">
 													<a class="thumbnail pull-left" href="#">
-                                                        <img class="media-object" src="/assets/img500.jpg" class="img-responsive">
+                                                        <%= image_tag(item.product.image_url.medium5x5.url) %>
+                                                        <!-- <img class="media-object" src="/assets/img500.jpg" class="img-responsive"> -->
                                                     </a>
 													 <div class="media-body">
                                                         <h4 class="media-heading"><a href="#"><%= item.product.name %></a></h4>
@@ -384,7 +385,8 @@
 <h4>Order Summary</h4>
 <% @cart.line_items.each do |item| %>
 <div class="img-section border-style1">
-    <img src="/assets/img500.jpg" width="80px">
+    <%= image_tag(item.product.image_url.medium5x5.url,:width => "80px") %>
+
     <div class="detail-section">
         <h5><%= item.product.name %></h5>
         <p><%= item.product.description %></p>

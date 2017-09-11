@@ -32,7 +32,7 @@
                                               <% @cart_item.each do |item| %>
 												<ul>
 													<li>
-                                                      <%= image_tag(item.product.image_url) %>
+                                                      <%= image_tag(item.product.image_url.medium5x5.url) %>
 														<!-- <img src="/assets/img500.jpg"> -->
 													</li>
 													<li>

@@ -1,7 +1,8 @@
 <% products.each do |pro| %>
 <div class="col-md-4 col-sm-6">
     <div class="product-container2 product-container1 text-center">
-        <img src="/assets/img550.jpg" alt="" />
+        <!-- <img src="/assets/img550.jpg" alt="" /> -->
+        <%= image_tag(pro.image_url.medium5x5.url) %>
         <h4><%= pro.name %></h4>
         <p>Rs.<%= pro.price %></p>
         <div class="wishlist-button">

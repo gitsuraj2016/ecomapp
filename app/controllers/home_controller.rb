@@ -16,6 +16,12 @@ class HomeController < ApplicationController
   end
 
   def delete_sub
+     ProductColor.delete_all
+     ProductBrand.delete_all
+     Color.delete_all
+     Brand.delete_all
+     LineItem.delete_all
+     Product.delete_all
      Subcategory.delete_all
      render :json => {:success => 'Error'}.to_json
   end

@@ -15,6 +15,11 @@ class HomeController < ApplicationController
      end
   end
 
+  def delete_sub
+     Subcategory.delete_all
+     render :json => {:success => 'Error'}.to_json
+  end
+
   def product_list
 
       cat_id  = params[:cat_id]

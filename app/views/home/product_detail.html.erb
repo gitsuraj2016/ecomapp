@@ -26,32 +26,38 @@
 						<div class='carousel-inner '>
 							<div class='item active'>
 								<a class="fancybox" rel="ligthbox" href="/assets/img550.jpg">
-									<img class="img-responsive" src='/assets/img550.jpg' alt='' />
+								 <%= image_tag(@product.image_url.medium5x5.url) %>
+									<!-- <img class="img-responsive" src='/assets/img550.jpg' alt='' /> -->
 								</a>
 							</div>
-							<div class='item' >
+							<div class='item'>
 								<a class="fancybox" rel="ligthbox" href="/assets/img550.jpg">
-									<img class="img-responsive" src='/assets/img550.jpg' alt='' />
+									<!-- <img class="img-responsive" src='/assets/img550.jpg' alt='' /> -->
+									<%= image_tag(@product.image_url.medium5x5.url) %>
 								</a>
 							</div>
-							<div class='item' >
+							<div class='item'>
 								<a class="fancybox" rel="ligthbox" href="/assets/img550.jpg">
-									<img class="img-responsive" src='/assets/img550.jpg' alt='' />
+									<!-- <img class="img-responsive" src='/assets/img550.jpg' alt='' /> -->
+									<%= image_tag(@product.image_url.medium5x5.url) %>
 								</a>
 							</div>
-							<div class='item' >
+							<div class='item'>
 								<a class="fancybox" rel="ligthbox" href="/assets/img550.jpg">
-									<img class="img-responsive" src='/assets/img550.jpg' alt='' />
+									<!-- <img class="img-responsive" src='/assets/img550.jpg' alt='' /> -->
+									<%= image_tag(@product.image_url.medium5x5.url) %>
 								</a>
 							</div>
-							<div class='item' >
+							<div class='item'>
 								<a class="fancybox" rel="ligthbox" href="/assets/img550.jpg">
-									<img class="img-responsive" src='/assets/img550.jpg' alt='' />
+									<!-- <img class="img-responsive" src='/assets/img550.jpg' alt='' /> -->
+									<%= image_tag(@product.image_url.medium5x5.url) %>
 								</a>
 							</div>
-							<div class='item' >
+							<div class='item'>
 								<a class="fancybox" rel="ligthbox" href="/assets/img550.jpg">
-									<img class="img-responsive" src='/assets/img550.jpg' alt='' />
+									<!-- <img class="img-responsive" src='/assets/img550.jpg' alt='' /> -->
+									<%= image_tag(@product.image_url.medium5x5.url) %>
 								</a>
 							</div>
 						</div>
@@ -67,12 +73,12 @@
 					
 					<!-- thumb -->
 				<ol class='carousel-indicators mCustomScrollbar meartlab'>
-					<li data-target='#carousel-custom' data-slide-to='0' class='active'><img src='/assets/img550.jpg' alt='' /></li>
-					<li data-target='#carousel-custom' data-slide-to='1'><img src='/assets/img550.jpg' alt='' /></li>
-					<li data-target='#carousel-custom' data-slide-to='2'><img src='/assets/img550.jpg' alt='' /></li>
-					<li data-target='#carousel-custom' data-slide-to='3'><img src='/assets/img550.jpg' alt='' /></li>
-					<li data-target='#carousel-custom' data-slide-to='4'><img src='/assets/img550.jpg' alt='' /></li>
-					<li data-target='#carousel-custom' data-slide-to='5'><img src='/assets/img550.jpg' alt='' /></li>
+					<li data-target='#carousel-custom' data-slide-to='0' class='active'><%= image_tag(@product.image_url.medium5x5.url) %></li>
+					<li data-target='#carousel-custom' data-slide-to='1'><%= image_tag(@product.image_url.medium5x5.url) %></li>
+					<li data-target='#carousel-custom' data-slide-to='2'><%= image_tag(@product.image_url.medium5x5.url) %></li>
+					<li data-target='#carousel-custom' data-slide-to='3'><%= image_tag(@product.image_url.medium5x5.url) %></li>
+					<li data-target='#carousel-custom' data-slide-to='4'><%= image_tag(@product.image_url.medium5x5.url) %></li>
+					<li data-target='#carousel-custom' data-slide-to='5'><%= image_tag(@product.image_url.medium5x5.url) %></li>
 					
 				</ol>
 				</div>
@@ -82,10 +88,10 @@
        <div class="col-md-4">
         <div class="product-sidebar">
             <div class="wishlist1 product-style1 product-style11">									
-                <h2>Rs 3000</h2>
-				<a href="#" class="wish123">Product Name</a>
+                <h2>Rs <%= @product.price%></h2>
+				<a href="#" class="wish123"><%= @product.name%></a>
 				<p>SKU-123</p>
-				<p><strong>Short Description:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+				<p><strong>Short Description:</strong><%= @product.description%></p>
             </div>
              
              <div class="wishlist3 product-style1">
@@ -93,13 +99,14 @@
                 <div class=" col-md-offset-2 col-xs-offset-2 col-md-8  col-xs-8 text-center">
                     <p>How many do you want?</p>
                     	<div id="field1">
-							<button type="button" id="sub" class="sub field-style">-</button>
+							<button type="button"  id="sub" class="sub field-style">-</button>
 							<input type="text" id="1" value="1" class="field" />
 							<button type="button" id="add" class="add field-style">+</button>
 						</div>
                 </div>
-                <a href="#" class="btn btn-default-style1">ADD TO CART</a>									
-				<a href="checkout.html" class="btn btn-default-style1">BUY NOW</a>
+                <!-- <a href="#" class="btn btn-default-style1">ADD TO CART</a> -->
+                <%= button_to 'ADD TO CART', line_items_path(product_id: "#{@product.id}"),class: "btn btn-default-style1" %>									
+				<!-- <a href="checkout.html" class="btn btn-default-style1">BUY NOW</a> -->
             </div>
             
         </div>
@@ -325,11 +332,32 @@
 <script src="http://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
 <script>
   $('.add').click(function () {
-		$(this).prev().val(+$(this).prev().val() + 1);
+		// $(this).prev().val(+$(this).prev().val() + 1);
+		var p_id = "<%= @product.id %>";
+		var type = 'add';
 	});
 	$('.sub').click(function () {
-		if ($(this).next().val() > 0) $(this).next().val(+$(this).next().val() - 1);
+		// if ($(this).next().val() > 0) $(this).next().val(+$(this).next().val() - 1);
+		var p_id = "<%= @product.id %>";
+		var type = 'sub';
 	});
+
+
+  $.ajax('/item_increase_decrease', 
+    {
+        type: 'POST',
+        dataType : 'script',
+        data: {
+          "pid" : p_id,
+          "typ" : type
+      },
+        success: function(data) 
+        {
+           if(data.success == "success"){
+           }else{
+           }
+      } 
+  });
 </script>
 <script type="text/javascript">
 						

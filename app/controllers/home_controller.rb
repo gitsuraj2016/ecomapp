@@ -123,6 +123,9 @@ class HomeController < ApplicationController
 
   def product_detail
 
+    pid = params[:p_id]
+    @product = Product.where(:id=>pid).first
+
   end
   def product_search
 

@@ -31,7 +31,7 @@ Rails.application.routes.draw do
   get  '/productfilter_listing' => 'home#productfilter_listing', as: 'productfilter_listing'
   
   
-  get  'home/product_detail'
+  get  '/product_detail' => 'home#product_detail', as: 'product_detail'
   get  'home/product_update'
   # get  'home/product_listing'
   # get  'orders/order_success'

@@ -98,6 +98,45 @@ class LineItemsController < ApplicationController
     end
   end
 
+  def item_increase_decrease
+
+       product = Product.find(params[:id])
+    if params[:typ].to_s == "add"
+       # product = Product.find(params[:id])
+       @line_item = @cart.incr_product(product)
+    else
+       @line_item = @cart.decr_product(product)
+    end
+    
+
+    # respond_to do |format|
+    #   if @line_item.save
+    #     format.html { redirect_to :back, notice: 'item was successfully updated.' }
+    #     format.js
+    #     format.json { render :show, status: :ok, location: @line_item }
+    #   else
+    #     format.html { render :edit }
+    #     format.json { render json: @line_item.errors, status: :unprocessable_entity }
+    #   end
+    # end
+  end
+
+  def item_decrease
+    product = Product.find(params[:id])
+    @line_item = @cart.incr_product(product)
+
+    # respond_to do |format|
+    #   if @line_item.save
+    #     format.html { redirect_to :back, notice: 'item was successfully updated.' }
+    #     format.js
+    #     format.json { render :show, status: :ok, location: @line_item }
+    #   else
+    #     format.html { render :edit }
+    #     format.json { render json: @line_item.errors, status: :unprocessable_entity }
+    #   end
+    # end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_line_item

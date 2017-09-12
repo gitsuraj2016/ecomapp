@@ -8,7 +8,12 @@
         <div class="wishlist-button">
             <%= button_to 'Add to Cart', line_items_path(product_id: pro),class: "btn btn-default-style2" %>
             <!-- <button class="btn btn-default-style2">Add To Cart</button> -->
-            <a href="/home/product_detail" class="btn btn-warning">Buy Now</a>
+            <%#= button_to 'Buy Now', product_detail_path(p_id: pro.id),class: "btn btn-warning" %>
+            <%= link_to "Buy Now",{ 
+            :controller => "home", 
+            :action => "product_detail", 
+            :p_id => pro.id },{:class => "btn btn-warning"}  %>
+            <!-- <a href="/home/product_detail/<%=pro.id%>" class="btn btn-warning">Buy Now</a> -->
             <div class="heart1">
                 <a href="#"><i class="fa fa-heart" aria-hidden="true"></i></a>
             </div>

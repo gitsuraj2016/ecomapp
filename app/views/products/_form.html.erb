@@ -41,7 +41,7 @@
   </div>
   <div class="field">
     <%= f.label :Subcategory %><br>
-    <%= select_tag(:subcategory_id, options_for_select(@subcategories), :prompt => "Select one!") %><br>
+    <%= select_tag(:subcategory_id, options_for_select(@subcategories), :prompt => "Select Subcategory",:required => true) %><br>
   </div>
   <br>
   <!-- <div class="field">

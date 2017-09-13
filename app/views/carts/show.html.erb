@@ -63,22 +63,22 @@
 												</div>
 												<div class="media1 text-center">
 													<div id="field1">
-														<!-- <button type="button" id="sub" class="sub field-style">-</button> -->
+														<button type="button" id="sub" onclick="line_item_increse('<%= item.product.id %>','sub');" class="sub field-style">-</button>
                           <%#= link_to "-", decrease_line_item_path(product_id: item.product), class: "sub field-style"%>
                   
-                          <%= button_to "-",decrease_line_item_path(item.product), class: "sub field-style", :method => "get" %>
-                          <input id="1" value="1" class="field" type="text">
-                          <%#= link_to "+", increase_line_item_path(product_id: item.product), class: "add field-style" %>
-                          <%= button_to "+",increase_line_item_path(item.product), class: "add field-style", :method => "get" %>
+                          <%#= button_to "-",decrease_line_item_path(item.product), class: "sub field-style", :method => "get" %>
+                          <input  value="<%= item.quantity %>" id ="pro_count_<%= item.product.id %>" class="field" type="text">
+                          <%#= link_to "+", increase_line_item_path(product_id: item.product), {:class=>"add field-style"} %>
+                          <%#= button_to "+",increase_line_item_path(item.product), class: "add field-style", :method => "get" %>
 														
-														<!-- <button type="button" id="add" class="add field-style">+</button> -->
+														<button type="button" id="add" onclick="line_item_increse('<%= item.product.id %>','add');" class="add field-style">+</button>
 													</div>
                           <%= link_to(item,method: :delete,class: "btn btn-success") do %>
                                                 Remove <span class="fa fa-trash-o"></span>
                                             <% end %>
                           <%#= link_to 'Remove', item, method: :delete, %>
 													
-													</button>
+													<!-- </button> -->
 												</div>
 											</div>
 										</div>
@@ -629,6 +629,39 @@
 </div>  
 	
 <script>
+
+function line_item_increse(p_id,type)
+   {
+    var qnty = $('#pro_count_'+p_id).val();
+     if(parseInt(qnty) == 1 && type =="sub"){
+         return false
+     }else{
+        // alert(qnty);
+        $.ajax('/item_increase_decrease', 
+            {
+                type: 'GET',
+                // dataType : 'script',
+                data: {
+                  "pid" : p_id,
+                  "typ" : type
+              },
+                success: function(data) 
+                {
+                  // alert(data.line_item);
+                   if(data.success == "success"){
+                       $('#pro_count_'+p_id).val(data.line_item);
+                   }else{
+
+                   }
+              } 
+            });
+     }
+      
+
+     // }
+            
+
+   }
 
 $(document).ready(function() {
    $("#cdcard_div").hide();

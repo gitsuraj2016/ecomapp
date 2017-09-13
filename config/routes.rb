@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   get  '/product_list' => 'home#product_list', as: 'product_list'
   get  '/filter_listing' => 'home#filter_listing', as: 'filter_listing'
   get  '/productfilter_listing' => 'home#productfilter_listing', as: 'productfilter_listing'
+  get  '/item_increase_decrease' => 'line_items#item_increase_decrease', as: 'item_increase_decrease'
   
   
   get  '/product_detail' => 'home#product_detail', as: 'product_detail'

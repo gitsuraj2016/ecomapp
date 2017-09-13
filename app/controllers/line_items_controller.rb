@@ -1,6 +1,6 @@
 class LineItemsController < ApplicationController
   include CurrentCart
-  before_action :set_cart, only: [:create,:decrease, :increase]
+  before_action :set_cart, only: [:create,:decrease, :increase,:item_increase_decrease]
   before_action :set_line_item, only: [:show, :edit, :update, :destroy]
 
   # GET /line_items
@@ -100,42 +100,34 @@ class LineItemsController < ApplicationController
 
   def item_increase_decrease
 
-       product = Product.find(params[:id])
+       product = Product.find(params[:pid])
     if params[:typ].to_s == "add"
        # product = Product.find(params[:id])
        @line_item = @cart.incr_product(product)
     else
        @line_item = @cart.decr_product(product)
     end
+    if @line_item.save    
+      render :json => {:success => "success",:line_item => @line_item.quantity}.to_json
+     end
     
-
-    # respond_to do |format|
-    #   if @line_item.save
-    #     format.html { redirect_to :back, notice: 'item was successfully updated.' }
-    #     format.js
-    #     format.json { render :show, status: :ok, location: @line_item }
-    #   else
-    #     format.html { render :edit }
-    #     format.json { render json: @line_item.errors, status: :unprocessable_entity }
-    #   end
-    # end
   end
 
-  def item_decrease
-    product = Product.find(params[:id])
-    @line_item = @cart.incr_product(product)
+  # def item_decrease
+  #   product = Product.find(params[:id])
+  #   @line_item = @cart.incr_product(product)
 
-    # respond_to do |format|
-    #   if @line_item.save
-    #     format.html { redirect_to :back, notice: 'item was successfully updated.' }
-    #     format.js
-    #     format.json { render :show, status: :ok, location: @line_item }
-    #   else
-    #     format.html { render :edit }
-    #     format.json { render json: @line_item.errors, status: :unprocessable_entity }
-    #   end
-    # end
-  end
+  #   # respond_to do |format|
+  #   #   if @line_item.save
+  #   #     format.html { redirect_to :back, notice: 'item was successfully updated.' }
+  #   #     format.js
+  #   #     format.json { render :show, status: :ok, location: @line_item }
+  #   #   else
+  #   #     format.html { render :edit }
+  #   #     format.json { render json: @line_item.errors, status: :unprocessable_entity }
+  #   #   end
+  #   # end
+  # end
 
   private
     # Use callbacks to share common setup or constraints between actions.

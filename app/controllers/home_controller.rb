@@ -135,6 +135,12 @@ class HomeController < ApplicationController
   def product_detail
 
     pid = params[:p_id]
+    current_item = LineItem.find_by(product_id: pid)
+    @cur_item_q = 0
+    if current_item.present?
+      @cur_item_q = current_item.quantity
+    end
+
     @product = Product.where(:id=>pid).first
 
   end

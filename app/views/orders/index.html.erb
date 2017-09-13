@@ -40,11 +40,11 @@
             <div class="col-md-4 col-sm-4">
               <div class="billing">
                 <h3>Billing Address</h3>
-                <p>Name Of The Customer</p>
-                <p>Phone No-9876543211</p>
-                <p>Email Id: newcustomer@mymailid.com</p>
-                <p>#23, 11th cross, 3rd Main, Kemapaura, Hebbal </p>
-                <p>Bangalore-560024, Karnataka</p> 
+                <p><%=@user_add.bfirst_name%></p>
+                <p>Phone No-<%=@user_add.bphone%></p>
+                <p>Email Id: <%=@user_add.bemail%></p>
+                <p><%=@user_add.baddress%> </p>
+                <p><%=@user_add.bcity%>-<%=@user_add.bpincode%> <%=@user_add.bstate%></p> 
               </div>
             </div>
 

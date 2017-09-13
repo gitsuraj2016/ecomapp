@@ -91,7 +91,7 @@ class PaymentsController < ApplicationController
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
         flash[:notice] = "Thank you for your order"
-        redirect_to :controller => 'orders', :action => 'index' 
+        redirect_to :controller => 'orders', :action => 'show', :id => order.id 
         # redirect_to  @order, notice:'Thank you for your order.'
       else
          flash[:notice] = "Payment fail!. Please try again"

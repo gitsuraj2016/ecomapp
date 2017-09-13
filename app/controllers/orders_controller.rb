@@ -7,6 +7,7 @@ class OrdersController < ApplicationController
   # GET /orders.json
   def index
     @orders = Order.where(:user_id=>current_user.id).last
+    @user_add = Address.where(:user_id=>current_user.id).first
     if !@orders.present?
       redirect_to root_url, notice: "No Order Found"
       return

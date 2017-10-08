@@ -1,3 +1,4 @@
+<div class="container-fluid">
 <%= form_for(@product) do |f| %>
   <% if @product.errors.any? %>
     <div id="error_explanation">
@@ -11,7 +12,47 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <table id="pro_table" style="width:50%">
+  <tr>
+    <td><%= f.label :name %><br></td>
+    <td><%= f.text_field :name %></td> 
+  </tr>
+  <tr>
+    <td><%= f.label :description %><br></td>
+    <td><%= f.text_area :description %></td> 
+  </tr>
+  <tr>
+    <td><%= f.label :image_url %><br></td>
+    <td><%= f.file_field :image_url %></td> 
+  </tr>
+  <tr>
+    <td><%= f.label :price %><br></td>
+    <td><%= f.text_field :price %></td> 
+  </tr>
+  <tr>
+    <td><%= f.label :curr_status %><br></td>
+    <td><%= f.text_field :curr_status %></td> 
+  </tr>
+  <tr>
+    <td><%= f.label :Color %><br></td>
+    <td><%= f.collection_select(:color_ids, Color.all, :id, :name, {include_hidden: false}, {multiple: true} ) %><br /></td> 
+  </tr>
+  <tr>
+    <td><%= f.label :Brand %><br></td>
+    <td><%= f.collection_select(:brand_ids, Brand.all, :id, :name, {include_hidden: false}, {multiple: true} ) %><br /></td> 
+  </tr>
+  <tr>
+    <td><%= f.label :Subcategory %><br></td>
+    <td><%= select_tag(:subcategory_id, options_for_select(@subcategories), :prompt => "Select Subcategory",:required => true) %><br></td> 
+  </tr>
+  
+  <tr>
+    <td><%= f.submit :class => "btn btn-warning" %></td>
+     
+  </tr>
+
+</table>
+  <!-- <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
@@ -34,21 +75,31 @@
    <div>
     <%= f.label :Color %><br>
     <%= f.collection_select(:color_ids, Color.all, :id, :name, {include_hidden: false}, {multiple: true} ) %><br />
-  </div>
-   <div>
+  </div> -->
+  <!--  <div>
    <%= f.label :Brand %><br>
     <%= f.collection_select(:brand_ids, Brand.all, :id, :name, {include_hidden: false}, {multiple: true} ) %><br />
   </div>
   <div class="field">
     <%= f.label :Subcategory %><br>
     <%= select_tag(:subcategory_id, options_for_select(@subcategories), :prompt => "Select Subcategory",:required => true) %><br>
-  </div>
-  <br>
+  </div> -->
+  <!-- <br> -->
   <!-- <div class="field">
     <%= f.label :category_id %><br>
     <%= f.text_field :category_id %>
   </div> -->
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+ <!--  <div class="actions">
+    <%= f.submit :class => "btn btn-warning" %>
+  </div> -->
 <% end %>
+<div>
+<style type="text/css">
+#pro_table 
+{
+    border-collapse:separate;
+    border-spacing:0 5px;
+
+}
+
+</style>

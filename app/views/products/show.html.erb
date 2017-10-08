@@ -1,35 +1,49 @@
+
 <p id="notice"><%= notice %></p>
+<div class="container-fluid">
+<table id="pro_table">
+  <tr>
+    <td><strong>Name:</strong></td>
+    <td><%= @product.name %></td> 
+  </tr>
 
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
+  <tr>
+    <td><strong>Description:</strong></td>
+    <td><%= @product.description %></td> 
+  </tr>
 
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
+  <tr>
+    <td><strong>Image:</strong></td>
+    <td><%= image_tag @product.image_url.medium5x5.url ,width: "60px",height: "60px" %></td> 
+  </tr>
 
-<p>
-  <strong>Image url:</strong>
-  <%= @product.image_url %>
-  <%= image_tag @product.image_url.medium5x5.url %>
-</p>
+  <tr>
+    <td><strong>Price:</strong></td>
+    <td><%= @product.price %></td> 
+  </tr>
 
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
+  <tr>
+    <td><strong>Curr status:</strong></td>
+    <td><%= @product.curr_status %></td> 
+  </tr>
 
-<p>
-  <strong>Curr status:</strong>
-  <%= @product.curr_status %>
-</p>
+  <tr>
+    <td><strong>Sub Category:</strong></td>
+    <td><%#= @product.subcategory.name %></td> 
+  </tr>
 
-<p>
-  <strong>Category:</strong>
-  <%= @product.subcategory.name %>
-</p>
+  <tr>
+    <td><%= link_to 'Edit', edit_product_path(@product),{:class => "btn btn-primary"} %> |
+    <%= link_to 'Back', products_path,{:class => "btn btn-primary"} %></td> 
+  </tr>
+</table>
+<div>
 
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+
+<style type="text/css">
+#pro_table 
+{
+    border-collapse:separate;
+    border-spacing:0 5px;
+}
+</style>

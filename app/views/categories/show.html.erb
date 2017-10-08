@@ -1,6 +1,34 @@
 <p id="notice"><%= notice %></p>
+<div class="container-fluid">
+<table id="pro_table">
+  <tr>
+    <td><strong>Name:</strong></td>
+    <td><%= @category.name %></td> 
+  </tr>
 
-<p>
+  <tr>
+    <td><strong>Description:</strong></td>
+    <td><%= @category.description %></td> 
+  </tr>
+
+  <tr>
+    <td><strong>Image:</strong></td>
+    <td><%= image_tag @category.image_url.medium5x5.url ,width: "60px",height: "60px" %></td> 
+  </tr>
+
+  <tr>
+    <td><strong>Active:</strong></td>
+    <td><%= @category.active %></td> 
+  </tr>
+
+
+  <tr>
+    <td><%= link_to 'Edit', edit_category_path(@category),{:class => "btn btn-primary"} %> |
+    <%= link_to 'Back', categories_path,{:class => "btn btn-primary"} %></td> 
+  </tr>
+</table>
+
+<!-- <p>
   <strong>Name:</strong>
   <%= @category.name %>
 </p>
@@ -21,5 +49,13 @@
   <%= @category.active %>
 </p>
 
-<%= link_to 'Edit', edit_category_path(@category) %> |
-<%= link_to 'Back', categories_path %>
+<%= link_to 'Edit', edit_category_path(@category),{:class => "btn btn-primary"} %> |
+<%= link_to 'Back', categories_path ,{:class => "btn btn-primary"}%> -->
+</div>
+<style type="text/css">
+#pro_table 
+{
+    border-collapse:separate;
+    border-spacing:0 5px;
+}
+</style>

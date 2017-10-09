@@ -5,7 +5,7 @@ body{
 margin: 0 !important;
 }
 .pro_add_to_cart{
-    display: inline;
+    /*display: inline;*/
 }
 .basket-adjust{
     min-width: 230px !important;

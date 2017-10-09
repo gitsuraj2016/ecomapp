@@ -6,7 +6,7 @@
         <h4><%= pro.name %></h4>
         <p>Rs.<%= pro.price %></p>
         <div class="wishlist-button">
-            <%= button_to 'Add to Cart', line_items_path(product_id: pro),class: "btn btn-default-style2 pro_add_to_cart" %>
+            <%= button_to 'Add to Cart', line_items_path(product_id: pro),{:style => "display:inline"; },class: "btn btn-default-style2 pro_add_to_cart" %>
             <!-- <button class="btn btn-default-style2">Add To Cart</button> -->
             <%#= button_to 'Buy Now', product_detail_path(p_id: pro.id),class: "btn btn-warning" %>
             <%= link_to "Buy Now",{ 

@@ -4,6 +4,9 @@ body{
     padding: 0 !important;
 margin: 0 !important;
 }
+.pro_add_to_cart{
+    display: inline;
+}
 .basket-adjust{
     min-width: 230px !important;
 right: 0px;

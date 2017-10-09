@@ -1,3 +1,4 @@
+<div class="container-fluid">
 <%= form_for(@brand) do |f| %>
   <% if @brand.errors.any? %>
     <div id="error_explanation">
@@ -11,15 +12,28 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :enabled %><br>
-    <%= f.check_box :enabled %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <table id="pro_table" style="width:50%">
+  <tr>
+    <td><%= f.label :name %><br></td>
+    <td><%= f.text_field :name %></td> 
+  </tr>
+  <tr>
+    <td><%= f.label :enabled %><br></td>
+    <td> f.check_box :enabled %></td> 
+  </tr>
+  <tr>
+    <td><%= f.submit :class => "btn btn-warning" %></td>
+  </tr>
+</table>
+
+
 <% end %>
+<div>
+<style type="text/css">
+#pro_table 
+{
+    border-collapse:separate;
+    border-spacing:0 5px;
+}
+</style>
+

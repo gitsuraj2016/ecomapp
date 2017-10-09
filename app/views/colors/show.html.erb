@@ -1,14 +1,29 @@
 <p id="notice"><%= notice %></p>
+<div class="container-fluid">
 
-<p>
-  <strong>Name:</strong>
-  <%= @color.name %>
-</p>
+<table id="pro_table">
+  <tr>
+    <td><strong>Name:</strong></td>
+    <td><%= @color.name %></td> 
+  </tr>
 
-<p>
-  <strong>Enable:</strong>
-  <%= @color.enabled %>
-</p>
+  <tr>
+    <td><strong>Enable:</strong></td>
+    <td><%= @color.enabled %></td> 
+  </tr>
 
-<%= link_to 'Edit', edit_color_path(@color) %> |
-<%= link_to 'Back', colors_path %>
+  <tr>
+    <td><%= link_to 'Edit', edit_color_path(@color),{:class => "btn btn-primary"} %> |
+    <%= link_to 'Back', colors_path,{:class => "btn btn-primary"} %></td> 
+  </tr>
+</table>
+
+</div>
+<style type="text/css">
+#pro_table 
+{
+    border-collapse:separate;
+    border-spacing:0 5px;
+}
+</style>
+

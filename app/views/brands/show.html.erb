@@ -1,14 +1,29 @@
 <p id="notice"><%= notice %></p>
+<div class="container-fluid">
 
-<p>
-  <strong>Name:</strong>
-  <%= @brand.name %>
-</p>
+<table id="pro_table">
+  <tr>
+    <td><strong>Name:</strong></td>
+    <td><%= @brand.name %></td> 
+  </tr>
 
-<p>
-  <strong>Enable:</strong>
-  <%= @brand.enabled %>
-</p>
+  <tr>
+    <td><strong>Enable:</strong></td>
+    <td><%= @brand.enabled %></td> 
+  </tr>
 
-<%= link_to 'Edit', edit_brand_path(@brand) %> |
-<%= link_to 'Back', brands_path %>
+  <tr>
+    <td><%= link_to 'Edit', edit_brand_path(@brand),{:class => "btn btn-primary"} %> |
+    <%= link_to 'Back', brands_path,{:class => "btn btn-primary"} %></td> 
+  </tr>
+</table>
+
+</div>
+<style type="text/css">
+#pro_table 
+{
+    border-collapse:separate;
+    border-spacing:0 5px;
+}
+</style>
+

@@ -1,3 +1,4 @@
+<div class="container-fluid">
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Brands</h1>
@@ -7,7 +8,7 @@
     <tr>
       <th>Name</th>
       <th>Enable</th>
-      <th colspan="3"></th>
+       <th colspan="3" style="padding-left:64px;">Action</th>
     </tr>
   </thead>
 
@@ -16,9 +17,9 @@
       <tr>
         <td><%= brand.name %></td>
         <td><%= brand.enabled %></td>
-        <td><%= link_to 'Show', brand %></td>
-        <td><%= link_to 'Edit', edit_brand_path(brand) %></td>
-        <td><%= link_to 'Destroy', brand, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', brand ,{:class => "btn btn-success"}%></td>
+        <td><%= link_to 'Edit', edit_brand_path(brand) ,{:class => "btn btn-info"}%></td>
+        <td><%= link_to 'Destroy', brand, :class => "btn btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +27,5 @@
 
 <br>
 
-<%= link_to 'New Brand', new_brand_path %>
+<%= link_to 'New Brand', new_brand_path ,{:class => "btn btn-primary"} %>
+</div>

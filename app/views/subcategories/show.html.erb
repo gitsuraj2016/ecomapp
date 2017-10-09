@@ -1,6 +1,33 @@
 <p id="notice"><%= notice %></p>
+<div class="container-fluid">
+<table id="pro_table">
+  <tr>
+    <td><strong>Name:</strong></td>
+    <td><%= @subcategory.name %></td> 
+  </tr>
 
-<p>
+  <tr>
+    <td><strong>Description:</strong></td>
+    <td><%= @subcategory.description %></td> 
+  </tr>
+
+  <tr>
+    <td><strong>Image:</strong></td>
+    <td><%= image_tag @subcategory.image_url.medium5x5.url ,width: "60px",height: "60px" %></td> 
+  </tr>
+
+  <tr>
+    <td><strong>Active:</strong></td>
+    <td><%= @subcategory.active %></td> 
+  </tr>
+
+
+  <tr>
+    <td><%= link_to 'Edit', edit_subcategory_path(@subcategory),{:class => "btn btn-primary"} %> |
+    <%= link_to 'Back', subcategories_path,{:class => "btn btn-primary"} %></td> 
+  </tr>
+</table>
+<!-- <p>
   <strong>Name:</strong>
   <%= @subcategory.name %>
 </p>
@@ -27,4 +54,12 @@
 </p>
 
 <%= link_to 'Edit', edit_subcategory_path(@subcategory) %> |
-<%= link_to 'Back', subcategories_path %>
+<%= link_to 'Back', subcategories_path %> -->
+</div>
+<style type="text/css">
+#pro_table 
+{
+    border-collapse:separate;
+    border-spacing:0 5px;
+}
+</style>
